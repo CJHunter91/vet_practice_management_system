@@ -32,3 +32,4 @@ appointment1 = Appointment.new({
   })
 
 appointment1.save
+

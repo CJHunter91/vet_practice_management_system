@@ -19,6 +19,9 @@ CREATE TABLE pets(
 );
 
 CREATE TABLE appointments(
-
-
+  id SERIAL4 PRIMARY KEY,
+  appointment_time TIME,
+  duration INT4, 
+  needs_seen BOOLEAN,
+  pet_id INT4 REFERENCES pets (id) ON DELETE CASCADE
 );

@@ -14,7 +14,7 @@ class Owner
       (name, address, phone)
       VALUES
       ($1, $2, $3)
-      RETURNING id"
+      RETURNING id;"
       @id = SqlRunner.run(sql, values)[0]['id']
   end
 end

@@ -1,6 +1,6 @@
 
 class Pet
-
+  attr_reader :id, :name, :age, :type, :breed, :owner_id
   def initialize(details)
     @id = details['id'] if details['id']
     @name = details['name']

@@ -1,6 +1,8 @@
 require_relative('../db/sql_runner')
 class Owner
 
+  attr_reader :id, :name, :address, :phone
+
   def initialize(details)
     @id = details['id'] if details['id']
     @name = details['name']

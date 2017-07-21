@@ -22,7 +22,7 @@ class Pet
 
   def self.delete_all
     values = []
-    sql = "DELETE FROM pets"
+    sql = "DELETE FROM pets;"
     SqlRunner.run(sql, values)
   end
 end

@@ -2,6 +2,7 @@ require_relative('../models/appointment')
 require_relative('../models/owner')
 require_relative('../models/pet')
 
+Appointment.delete_all
 Pet.delete_all
 Owner.delete_all
 

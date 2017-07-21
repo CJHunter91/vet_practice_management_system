@@ -22,7 +22,7 @@ class Owner
 
   def self.delete_all
     values = []
-    sql = "DELETE FROM owners"
+    sql = "DELETE FROM owners;"
     SqlRunner.run(sql, values)
   end
 end

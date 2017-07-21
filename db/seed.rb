@@ -36,6 +36,6 @@ appointment1 = Appointment.new({
 
 appointment1.save
 
-Pet.get_all
+Owner.get_all
 binding.pry
 nil

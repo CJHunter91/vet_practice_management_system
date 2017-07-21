@@ -36,14 +36,13 @@ appointment1 = Appointment.new({
 
 appointment1.save
 
-pet_altered = Pet.new({
-  'id' => pet1.id,
-  'name' => 'Tickles', 
-  'age' => 5,
-  'type' => 'Dog', 
-  'breed' => 'Gold Haired', 
-  'owner_id' => owner1.id
+appointment_a = Appointment.new({
+  'id' => appointment1.id,
+  'appointment_time' => '20:00', 
+  'duration' => 15,
+  'needs_seen' => false, 
+  'pet_id' => pet1.id, 
   })
-pet_altered.update
+appointment_a.update
 binding.pry
 nil

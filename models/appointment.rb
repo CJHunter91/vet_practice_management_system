@@ -27,6 +27,16 @@ class Appointment
     @id = SqlRunner.run(sql, values)[0]['id'].to_i
   end
 
+  def update
+    values = [@id, @appointment_time, @duration, @needs_seen, @pet_id]
+    sql = "UPDATE appointments SET
+    (appointment_time, duration, needs_seen, pet_id)
+    =
+    ($2, $3, $4, $5) 
+    WHERE id = $1;"
+    SqlRunner.run(sql, values)
+  end
+
   def delete
     values = [@id]
     sql = "DELETE FROM appointments WHERE id = $1;"

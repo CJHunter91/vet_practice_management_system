@@ -17,7 +17,7 @@ class TestPet < MiniTest::Test
       'name' => 'KitKat', 
       'age' => 4,
       'type' => 'Cat', 
-      'Breed' => 'Short Haired', 
+      'breed' => 'Short Haired', 
       'owner_id' => @owner1.id
       })
   end

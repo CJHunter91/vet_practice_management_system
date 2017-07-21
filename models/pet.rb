@@ -26,6 +26,13 @@ class Pet
     SqlRunner.run(sql, values)
   end
 
+  def self.get_all
+    values = []
+    sql = "SELECT * FROM pets"
+    pets = SqlRunner.run(sql, values)
+    return pets.map{|pet| Pet.new( pet )}
+  end
+
   def self.delete_all
     values = []
     sql = "DELETE FROM pets;"

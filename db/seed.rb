@@ -1,6 +1,8 @@
+require('pry')
 require_relative('../models/appointment')
 require_relative('../models/owner')
 require_relative('../models/pet')
+
 
 Appointment.delete_all
 Pet.delete_all
@@ -19,7 +21,7 @@ pet1 = Pet.new({
   'name' => 'KitKat', 
   'age' => 4,
   'type' => 'Cat', 
-  'Breed' => 'Short Haired', 
+  'breed' => 'Short Haired', 
   'owner_id' => owner1.id
   })
 
@@ -33,4 +35,7 @@ appointment1 = Appointment.new({
   })
 
 appointment1.save
-pet1.delete
+
+Pet.get_all
+binding.pry
+nil

@@ -36,13 +36,6 @@ appointment1 = Appointment.new({
 
 appointment1.save
 
-appointment_a = Appointment.new({
-  'id' => appointment1.id,
-  'appointment_time' => '20:00', 
-  'duration' => 15,
-  'needs_seen' => false, 
-  'pet_id' => pet1.id, 
-  })
-appointment_a.update
+
 binding.pry
 nil

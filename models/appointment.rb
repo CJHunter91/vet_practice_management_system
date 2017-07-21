@@ -5,9 +5,16 @@ class Appointment
     @id = details['id'].to_i if details['id']
     @appointment_time = details['appointment_time']
     @duration = details['duration'].to_i
-    #may need to convert string to bool
-    @needs_seen = details['needs_seen']
     @pet_id = details['pet_id'].to_i
+
+    #may need to convert string to bool
+    if details['needs_seen'] == 't'
+      @needs_seen = true
+    elsif details['needs_seen'] == 'f'
+      @needs_seen = false
+    else
+      @needs_seen = details['needs_seen']
+    end
   end
 
   def save

@@ -1,4 +1,6 @@
 require_relative('../db/sql_runner')
+require_relative('./pet')
+
 
 class Appointment
   attr_reader :id, :appointment_time, :duration, :needs_seen, :pet_id
@@ -16,6 +18,14 @@ class Appointment
     else
       @needs_seen = details['needs_seen']
     end
+  end
+
+  def get_pet
+    values = [@pet_id]
+    sql = "SELECT * FROM pets
+      WHERE id = $1;"
+    pet = SqlRunner.run(sql, values)[0]
+    return Pet.new( pet )
   end
 
   def save

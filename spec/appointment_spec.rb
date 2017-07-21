@@ -35,4 +35,8 @@ class TestAppointment < MiniTest::Test
   def test_pet_id
     assert_equal(@pet1.id, @appointment1.pet_id)
   end
+
+  def test_get_pet
+    assert_equal(@pet1, @appointment1.get_pet)
+  end
 end

@@ -3,12 +3,12 @@ require_relative('../db/sql_runner')
 class Pet
   attr_reader :id, :name, :age, :type, :breed, :owner_id
   def initialize(details)
-    @id = details['id'] if details['id']
+    @id = details['id'].to_i if details['id']
     @name = details['name']
-    @age = details['age']
+    @age = details['age'].to_i
     @type = details['type']
     @breed = details['breed']
-    @owner_id = details['owner_id']
+    @owner_id = details['owner_id'].to_i
   end
 
   def save
@@ -18,7 +18,7 @@ class Pet
       VALUES
       ($1, $2, $3, $4, $5)
       RETURNING id;"
-      @id = SqlRunner.run(sql, values)[0]['id']
+      @id = SqlRunner.run(sql, values)[0]['id'].to_i
   end
 
   def update

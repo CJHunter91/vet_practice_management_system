@@ -21,7 +21,7 @@ class Appointment
 
   def delete
     values = [@id]
-    sql = "DELETE FROM appointments WHERE id = $1"
+    sql = "DELETE FROM appointments WHERE id = $1;"
     SqlRunner.run(sql, values)
   end
 

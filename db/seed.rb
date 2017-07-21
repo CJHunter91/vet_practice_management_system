@@ -14,6 +14,7 @@ owner1 = Owner.new({
 
 owner1.save
 
+
 pet1 = Pet.new({
   'name' => 'KitKat', 
   'age' => 4,
@@ -32,4 +33,4 @@ appointment1 = Appointment.new({
   })
 
 appointment1.save
-
+pet1.delete

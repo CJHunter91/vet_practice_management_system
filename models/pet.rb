@@ -20,6 +20,12 @@ class Pet
       @id = SqlRunner.run(sql, values)[0]['id']
   end
 
+  def delete 
+    values = [@id]
+    sql = "DELETE FROM pets WHERE id = $1;"
+    SqlRunner.run(sql, values)
+  end
+
   def self.delete_all
     values = []
     sql = "DELETE FROM pets;"

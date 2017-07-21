@@ -1,3 +1,4 @@
+require_relative('../db/sql_runner')
 
 class Pet
   attr_reader :id, :name, :age, :type, :breed, :owner_id

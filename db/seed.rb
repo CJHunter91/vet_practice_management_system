@@ -36,6 +36,5 @@ appointment1 = Appointment.new({
 
 appointment1.save
 
-
 binding.pry
 nil

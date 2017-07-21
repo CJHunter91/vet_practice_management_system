@@ -1,4 +1,5 @@
-  
+require_relative('../db/sql_runner')
+
 class Appointment
   attr_reader :id, :appointment_time, :duration, :needs_seen, :pet_id
   def initialize(details)
@@ -47,7 +48,7 @@ class Appointment
     values = []
     sql = "SELECT * FROM appointments;"
     appointments = SqlRunner.run(sql, values)
-    appointments.map{|appointment| Appointment.new( appointment )}
+    return appointments.map{|appointment| Appointment.new( appointment )}
   end
 
   def self.delete_all

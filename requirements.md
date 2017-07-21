@@ -20,3 +20,5 @@ Models:
     - Add a pet to owner 
 
     - Add pet to appointment
+
+    - Layout for appointments.** surname, address, name, specied breed sex(ME MN FE FN U) dob potentialy reason for appointment

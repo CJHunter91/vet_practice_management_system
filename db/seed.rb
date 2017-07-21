@@ -36,6 +36,11 @@ appointment1 = Appointment.new({
 
 appointment1.save
 
-Appointment.get_all
+Owner.new({
+  'id' => owner1.id,
+  'name' => 'John',
+  'address' => 'Edinburgh',
+  'phone' => '01312281211'
+  }).update
 binding.pry
 nil

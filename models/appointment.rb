@@ -7,7 +7,7 @@ class Appointment
     @duration = details['duration'].to_i
     @pet_id = details['pet_id'].to_i
 
-    #may need to convert string to bool
+    #conversion of string into bool from db
     if details['needs_seen'] == 't'
       @needs_seen = true
     elsif details['needs_seen'] == 'f'

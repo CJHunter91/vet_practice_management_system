@@ -3,6 +3,7 @@ require_relative('../models/owner')
 require_relative('../models/pet')
 
 Pet.delete_all
+Owner.delete_all
 
 owner1 = Owner.new({
   'name' => 'Chris',

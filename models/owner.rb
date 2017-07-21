@@ -19,4 +19,10 @@ class Owner
       RETURNING id;"
       @id = SqlRunner.run(sql, values)[0]['id']
   end
+
+  def self.delete_all
+    values = []
+    sql = "DELETE FROM owners"
+    SqlRunner.run(sql, values)
+  end
 end

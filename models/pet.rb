@@ -20,6 +20,16 @@ class Pet
       @id = SqlRunner.run(sql, values)[0]['id']
   end
 
+  def update
+    values = [@name, @age, @type, @breed, @owner_id, @id]
+    sql = "UPDATE pets SET
+    (name, age, type, breed, owner_id)
+    =
+    ($1, $2, $3, $4, $5) 
+    WHERE id = $6;"
+    SqlRunner.run(sql, values)
+  end
+
   def delete 
     values = [@id]
     sql = "DELETE FROM pets WHERE id = $1;"

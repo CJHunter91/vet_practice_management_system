@@ -1,4 +1,4 @@
-
+require_relative('../db/sql_runner')
 class Owner
 
   def initialize(details)

@@ -36,6 +36,6 @@ appointment1 = Appointment.new({
 
 appointment1.save
 
-Owner.get_all
+Appointment.get_all
 binding.pry
 nil

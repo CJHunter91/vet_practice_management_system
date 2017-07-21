@@ -2,11 +2,12 @@
 class Appointment
   attr_reader :id, :appointment_time, :duration, :needs_seen, :pet_id
   def initialize(details)
-    @id = details['id'] if details['id']
+    @id = details['id'].to_i if details['id']
     @appointment_time = details['appointment_time']
-    @duration = details['duration']
+    @duration = details['duration'].to_i
+    #may need to convert string to bool
     @needs_seen = details['needs_seen']
-    @pet_id = details['pet_id']
+    @pet_id = details['pet_id'].to_i
   end
 
   def save
@@ -16,13 +17,20 @@ class Appointment
     VALUES 
     ($1, $2, $3, $4)
     RETURNING id;"
-    @id = SqlRunner.run(sql, values)[0]['id']
+    @id = SqlRunner.run(sql, values)[0]['id'].to_i
   end
 
   def delete
     values = [@id]
     sql = "DELETE FROM appointments WHERE id = $1;"
     SqlRunner.run(sql, values)
+  end
+
+  def self.get_all
+    values = []
+    sql = "SELECT * FROM appointments;"
+    appointments = SqlRunner.run(sql, values)
+    appointments.map{|appointment| Appointment.new( appointment )}
   end
 
   def self.delete_all

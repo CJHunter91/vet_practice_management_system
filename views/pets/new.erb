@@ -1,4 +1,4 @@
-<form method="post" action="/">
+<form method="post" action="/pet">
   <label>Name</label>
   <input type="text" name="name">
   <label>Age</label>
@@ -7,4 +7,6 @@
   <input type="text" name="type">
   <label>Breed</label>
   <input type="text" name="breed">
+  <input type="hidden" name="owner_id" value= "<%= params[:id] %>">
+  <input type="submit" name="submit">
 </form>

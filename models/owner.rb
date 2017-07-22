@@ -43,7 +43,8 @@ class Owner
     values = [id]
     sql = "SELECT * FROM owners
       WHERE id = $1;"
-      return SqlRunner.run(sql, values).first
+      owner = SqlRunner.run(sql, values).first
+      return Owner.new( owner )
   end
 
   def self.get_all

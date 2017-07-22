@@ -11,7 +11,7 @@ class TestAppointment < MiniTest::Test
       'address' => 'Edinburgh',
       'phone' => '01312281211'
       })
-
+    @owner1.save
     @pet1 = Pet.new({
       'name' => 'KitKat', 
       'age' => 4,
@@ -19,7 +19,7 @@ class TestAppointment < MiniTest::Test
       'breed' => 'Short Haired', 
       'owner_id' => @owner1.id
       })
-
+    @pet1.save
     @appointment1 = Appointment.new({
       'appointment_time' => '10:00', 
       'duration' => 10,
@@ -28,11 +28,8 @@ class TestAppointment < MiniTest::Test
       })
   end
 
-  def test_pet_id
-    assert_equal(@pet1.id, @appointment1.pet_id)
-  end
-
-  def test_get_pet
-    assert_equal(@pet1, @appointment1.get_pet)
+  def test_get_pets
+    pets = @owner1.get_pets
+    assert_equal([@pet1], pets)
   end
 end

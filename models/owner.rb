@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('./pet')
 
 class Owner
 
@@ -9,6 +10,14 @@ class Owner
     @name = details['name']
     @address = details['address']
     @phone = details['phone']
+  end
+
+  def get_pets
+    values = [@id]
+    sql = "SELECT * FROM pets
+      WHERE owner_id = $1;"
+    pets = SqlRunner.run(sql, values)
+    return pets.map{|pet| Pet.new(pet)}
   end
 
   def save

@@ -24,6 +24,14 @@
     <td><%= pet.name %></td>
     <td><%= pet.type %></td>
     <td><%= pet.breed %></td>
+    <% if params[:new_appointment] %>
+    <td>
+      <form method="GET" action="/appointments/new">
+        <input type="hidden" name="pet_id" value="<%= pet.id %>">
+        <input type="submit" name="new_appointment" value="New Appointment">
+      </form>
+    </td>
+    <% end %>
   </tr>
   <% end %>
 </table>

@@ -11,12 +11,10 @@ class Appointment
     @pet_id = details['pet_id'].to_i
 
     #conversion of string into bool from db
-    if details['needs_seen'] == 't'
-      @needs_seen = true
-    elsif details['needs_seen'] == 'f'
+    if details['needs_seen'] == 'f'
       @needs_seen = false
     else
-      @needs_seen = details['needs_seen']
+      @needs_seen = true
     end
   end
 

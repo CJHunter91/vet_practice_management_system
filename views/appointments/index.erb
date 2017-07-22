@@ -1,24 +1,24 @@
 
 
 <table>
-<% @appointments.each do |appointment| %>
-  <% pet = appointment.get_pet %>
   <tr>
     <th>Time</th>
-    <th>Duration</th>
     <th>Surname</th>
-    <th>Patient Name</th>
-    <!-- <th>Sex</th> -->
-    <th>Age</th>
-    <!-- surname, address, name, specied breed sex(ME MN FE FN U) dob potentialy reason for appointment-->
+    <th>Patient</th>
+    <th>Type</th>
+    <th>Breed</th>
+    <th>Vet</th>
+    <!-- surname, address, name, species, breed sex(ME MN FE FN U) dob potentialy reason for appointment-->
   </tr>
+  <% @appointments.each do |appointment| %>
+  <% pet = appointment.get_pet %>
   <tr>
     <td><%= appointment.appointment_time %></td>
-    <td><%= appointment.duration %></td>
     <td>Bloggs</td>
     <td><%= pet.name %></td>
-    <td><%= pet.age %></td>
-    <td><%= pet.age %></td>
+    <td><%= pet.type %></td>
+    <td><%= pet.breed %></td>
+    <td>McCluskey</td>
   </tr>
 <% end %>
 </table>

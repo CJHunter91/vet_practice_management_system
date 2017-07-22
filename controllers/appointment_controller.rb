@@ -8,3 +8,7 @@ end
 get '/appointments/new' do
   erb(:'appointments/new')
 end
+
+post '/appointments' do
+  Appointment.new(params).save
+end

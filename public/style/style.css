@@ -1,3 +1,7 @@
 @import url(nav.css);
 @import url(table.css);
 
+#homeImage img{
+  width: 100vw;
+  height: 25%;
+}

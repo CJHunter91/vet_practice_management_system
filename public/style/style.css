@@ -3,7 +3,17 @@
 
 #header{
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  font-size: 0.8em;
+  width: 100vw;
+  background-color: #0099CC;
+
+}
+
+#header h1{
+  padding: 5px;
+  margin: 0px;
+
 }
 
 #homeImage img{

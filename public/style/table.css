@@ -1,0 +1,16 @@
+.main_table{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+}
+
+.main_table td, th{
+    text-align: center;
+    width: 20em;
+    height: 2em;
+}
+
+.t_header{
+  background-color: #0099CC;
+}

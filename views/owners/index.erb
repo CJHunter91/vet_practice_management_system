@@ -5,10 +5,12 @@
     <th>Phone</th>
   </tr>
   <% @owners.each do |owner| %>
+    
     <tr>
-      <td><%= owner.name %></td>
+      <td><a href="/owners/<%= owner.id %>"><%= owner.name %></a></td>
       <td><%= owner.address %></td>
       <td><%= owner.phone %></td>
+    
     </tr>
   <% end %>
 </table>

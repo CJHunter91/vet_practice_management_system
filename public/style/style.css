@@ -1,7 +1,12 @@
 @import url(nav.css);
 @import url(table.css);
 
+#header{
+  display: flex;
+  justify-content: center;
+}
+
 #homeImage img{
   width: 100vw;
-  height: 25%;
+  height: 50vw;
 }

@@ -5,6 +5,10 @@ get '/owners' do
   erb(:'owners/index')
 end
 
+get '/owners/:id' do 
+  erb(:'owners/show')
+end
+
 get '/owners/new' do 
   erb(:'owners/new')
 end

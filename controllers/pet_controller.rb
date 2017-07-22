@@ -6,4 +6,5 @@ end
 
 post '/pet' do 
   Pet.new( params ).save
+  redirect to '/owners/' + params[:owner_id].to_s
 end

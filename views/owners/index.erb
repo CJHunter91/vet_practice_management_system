@@ -10,7 +10,12 @@
       <td><a href="/owners/<%= owner.id %>"><%= owner.name %></a></td>
       <td><%= owner.address %></td>
       <td><%= owner.phone %></td>
-    
+
+      <% if params[:new_appointment]  %>
+      <td><button>Select</button></td>
+      <% end %>
+
     </tr>
   <% end %>
 </table>
+

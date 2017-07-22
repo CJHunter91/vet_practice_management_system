@@ -7,6 +7,7 @@ end
 
 get '/owners/:id' do 
   @owner = Owner.find(params[:id])
+  @pets = @owner.get_pets
   erb(:'owners/show')
 end
 

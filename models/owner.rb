@@ -6,7 +6,7 @@ class Owner
   attr_reader :id, :name, :address, :phone
 
   def initialize(details)
-    @id = details['id'] if details['id']
+    @id = details['id'].to_i if details['id']
     @name = details['name']
     @address = details['address']
     @phone = details['phone']
@@ -27,11 +27,9 @@ class Owner
       VALUES
       ($1, $2, $3)
       RETURNING id;"
-      @id = SqlRunner.run(sql, values)[0]['id']
+      @id = SqlRunner.run(sql, values)[0]['id'].to_i
   end
-
-
-
+  
   def update
     values = [@name, @address, @phone, @id]
     sql = "UPDATE owners SET

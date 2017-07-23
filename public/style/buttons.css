@@ -3,3 +3,9 @@
   justify-content: flex-end;
   min-width: 30px;
 }
+
+.add_icon{
+  background: url(../images/png/add.png);
+  width: 35px;
+  height: 35px;
+}

@@ -1,27 +1,28 @@
 
-
-<table class="main_table">
-  <tr class="t_header">
-    <th>Time</th>
-    <th>Surname</th>
-    <th>Patient</th>
-    <th>Type</th>
-    <th>Breed</th>
-    <th>Vet</th>
-    <!-- surname, address, name, species, breed sex(ME MN FE FN U) dob potentialy reason for appointment-->
-  </tr>
-  <% @appointments.each do |appointment| %>
-  <% pet = appointment.get_pet %>
-  <tr class="main_data">
-    <td><%= appointment.appointment_time %></td>
-    <td>Bloggs</td>
-    <td><%= pet.name %></td>
-    <td><%= pet.type %></td>
-    <td><%= pet.breed %></td>
-    <td>McCluskey</td>
-  </tr>
-<% end %>
-</table>
+<div class="main_table_div">
+  <table class="main_table">
+    <tr class="t_header">
+      <th>Time</th>
+      <th>Surname</th>
+      <th>Patient</th>
+      <th>Type</th>
+      <th>Breed</th>
+      <th>Vet</th>
+      <!-- surname, address, name, species, breed sex(ME MN FE FN U) dob potentialy reason for appointment-->
+    </tr>
+    <% @appointments.each do |appointment| %>
+    <% pet = appointment.get_pet %>
+    <tr class="main_data">
+      <td><%= appointment.appointment_time %></td>
+      <td>Bloggs</td>
+      <td><%= pet.name %></td>
+      <td><%= pet.type %></td>
+      <td><%= pet.breed %></td>
+      <td>McCluskey</td>
+    </tr>
+  <% end %>
+  </table>
+</div> 
 <form method="GET" action="/owners">
   <input type="submit" name="new_appointment" value="New Appointment">
 </form>

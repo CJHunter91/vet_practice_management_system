@@ -11,10 +11,17 @@
         </tr>
         <% @owners.each do |owner| %>
 
-        <tr class="main_data">
-          <td><a href="/owners/<%= owner.id %>"><%= owner.name %></a></td>
-          <td><%= owner.address %></td>
-          <td><%= owner.phone %></td>
+        <tr class="main_data" >
+          <td colspan="3">
+            <a href="/owners/<%= owner.id %>">
+              <table>
+                <td><%= owner.name %></td>
+                <td><%= owner.address %></td>
+                <td><%= owner.phone %></td>
+              </a>
+            </table>
+          </td>
+          
 
           <% if params[:new_appointment]  %>
           <td>
@@ -30,7 +37,7 @@
       </table>
     </div>
     <div id="add_app">
-    <a href="/owners/new"><button>Add Client</button></a>
+      <a href="/owners/new"><button>Add Client</button></a>
     </div>
   </div>
 

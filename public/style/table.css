@@ -10,11 +10,16 @@
 
 }
 
-.main_table td, th{
+  .main_table td, th, a{
     text-align: center;
     vertical-align: middle;
     width: 20em;
     height: 2em;
+}
+
+.main_table_data td, a{
+    text-decoration: none;
+    color: black;
 }
 
   .main_data:hover{

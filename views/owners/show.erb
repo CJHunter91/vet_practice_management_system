@@ -1,20 +1,17 @@
-<caption>Owner</caption>
-<table class='main_table'>
-  <tr class="t_header">
-    <th>Name</th>
-    <th>Address</th>
-    <th>Phone</th>
-  </tr>
-  <tr>
-    <td><%= @owner.name %></td>
-    <td><%= @owner.address %></td>
-    <td><%= @owner.phone %></td>
-  </tr>
-</table>
-
+  
 <div class="table_buttons">
+<div class="owner_details">
+<address>
+<p>
+  <%= @owner.name %><br>
+  <%= @owner.address %><br>
+  <%= @owner.phone %>
+</p>
+</address>
+</div>
+
+
   <div class="main_table_div">
-    <caption>Pets</caption>
     <table class="main_table">
       <tr class="t_header">
         <th>Name</th>
@@ -25,7 +22,7 @@
         <% end %>
       </tr>
       <% @pets.each do |pet| %>
-      <tr>
+      <tr class="main_data">
         <td><%= pet.name %></td>
         <td><%= pet.type %></td>
         <td><%= pet.breed %></td>

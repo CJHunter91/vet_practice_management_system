@@ -1,5 +1,6 @@
 @import url(nav.css);
 @import url(table.css);
+@import url(buttons.css);
 
 * {
   margin: 0;
@@ -9,6 +10,10 @@
 body{
   background-color: #66CCFF;
   font-family: Helvetica, Arial
+}
+
+.table_buttons{
+  display: flex;
 }
 
 

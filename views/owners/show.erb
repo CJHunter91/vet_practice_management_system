@@ -12,27 +12,36 @@
   </tr>
 </table>
 
-<caption>Pets</caption>
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Breed</th>
-  </tr>
-  <% @pets.each do |pet| %>
-  <tr>
-    <td><%= pet.name %></td>
-    <td><%= pet.type %></td>
-    <td><%= pet.breed %></td>
-    <% if params[:new_appointment] %>
-    <td>
-      <form method="GET" action="/appointments/new">
-        <input type="hidden" name="pet_id" value="<%= pet.id %>">
-        <input type="submit" name="new_appointment" value="New Appointment">
-      </form>
-    </td>
-    <% end %>
-  </tr>
-  <% end %>
-</table>
-<button><a href="/pet/<%= @owner.id %>/new">Create Pet</a></button>
+<div class="table_buttons">
+  <div class="main_table_div">
+    <caption>Pets</caption>
+    <table class="main_table">
+      <tr class="t_header">
+        <th>Name</th>
+        <th>Type</th>
+        <th>Breed</th>
+        <% if params[:new_appointment]  %>
+        <th>Select Pet</th>
+        <% end %>
+      </tr>
+      <% @pets.each do |pet| %>
+      <tr>
+        <td><%= pet.name %></td>
+        <td><%= pet.type %></td>
+        <td><%= pet.breed %></td>
+        <% if params[:new_appointment] %>
+        <td>
+          <form method="GET" action="/appointments/new">
+            <input type="hidden" name="pet_id" value="<%= pet.id %>">
+            <input type="submit" name="new_appointment" value="New Appointment">
+          </form>
+        </td>
+        <% end %>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+  <div id="add_app">
+    <a href="/pet/<%= @owner.id %>/new"><button>Create Pet</button></a>
+  </div>
+</div>

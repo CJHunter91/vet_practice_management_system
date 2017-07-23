@@ -10,18 +10,20 @@
 
 }
 
-.menu button{
-  background-color: #CCFFCC;
-  border-radius: 2px; 
-}
-
 .menu ul{
   width: 100vw;
 }
 
 .menu li a{
   text-decoration: none;
-  color: black;
+  color: #CCFFCC;
   padding: 5px;
+  font-size: 18px;
+  border-radius: 10px 2px 10px 2px;
+}
+
+.menu li a:hover{
+  background-color: #0099CC;
+  color: white;
 }
 

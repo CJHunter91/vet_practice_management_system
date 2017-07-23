@@ -1,3 +1,4 @@
+<h2>Create New Appointment</h2>
 <form method="POST" action="/appointments">
   <input type="hidden" name="pet_id" value="<%= params[:pet_id] %>">
   <label>Time:</label>
@@ -15,5 +16,5 @@
     <option value="15:00">15mins</option>
     <option value="30:00">30mins</option>
   </select>
-  <input type="submit" name="submit">
+  <input type="submit" name="Add Appointment">
 </form>

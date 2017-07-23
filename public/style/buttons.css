@@ -9,4 +9,8 @@
   background: url(../images/png/add.png);
   width: 35px;
   height: 35px;
+  border-radius: 10px;
+  border-color: #0099CC;
+  box-shadow: 4px 4px 5px #0099CC;
+
 }

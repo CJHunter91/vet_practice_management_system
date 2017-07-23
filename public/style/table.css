@@ -16,6 +16,9 @@
     width: 20em;
     height: 2em;
 }
+.t_header{
+  background-color: #0099CC;
+}
 
 .main_table_data td, a{
     text-decoration: none;
@@ -25,6 +28,3 @@
   background-color: #5fabd0;
 }
 
-.t_header{
-  background-color: #0099CC;
-}

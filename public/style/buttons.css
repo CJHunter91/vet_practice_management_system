@@ -1,7 +1,8 @@
 #add_app {
   display: flex;
   justify-content: flex-end;
-  min-width: 30px;
+  width: 30px;
+  padding-right: 20px;
 }
 
 .add_icon{

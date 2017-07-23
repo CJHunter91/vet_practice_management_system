@@ -15,6 +15,8 @@ body{
 .table_buttons{
   display: flex;
   justify-content: center;
+  padding-top: 40px;
+
 }
 
 .owner_details{
@@ -32,7 +34,7 @@ body{
   justify-content: flex-start;
   font-size: 0.8em;
   width: 100vw;
-  background-color: #003399;
+  /*background-color: #003399;*/
 
 
 }

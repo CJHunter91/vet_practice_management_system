@@ -11,6 +11,10 @@
     height: 2em;
 }
 
+  .main_data:hover{
+  background-color: #f5f5f5;
+}
+
 .t_header{
   background-color: #0099CC;
 }

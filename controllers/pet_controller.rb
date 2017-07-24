@@ -24,3 +24,10 @@ post '/pet/edit' do
   Pet.new(params).update
   redirect to '/pet/' + params[:id].to_s
 end 
+
+post '/pet/delete' do 
+  @pet_del = Pet.find(params['id'])
+  @owner_del = @pet_del.get_owner
+  @pet_del.delete
+  redirect to '/owners/' + @owner_del.id.to_s
+end

@@ -27,8 +27,13 @@
   </div>
   <div id="add_app">
     <a href="/pet/<%= @pet.id %>/edit"><button class="edit_icon"></button></a>
-    
   </div>
+
+  <div id="add_app">
+  <form method="POST" action="/pet/delete">
+    <input type="hidden" name="id" value="<%= @pet.id %>">
+    <input class="delete_icon" type="submit" name="delete_pet" value="">
+  </form>
 </div>
 <div id="med_history_div">
   

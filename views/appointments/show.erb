@@ -1,0 +1,40 @@
+<div class="table_buttons">
+  <div class="owner_details">
+    <address>
+      <p>
+        <%= @owner.name %><br>
+        <%= @owner.address %><br>
+        <%= @owner.phone %>
+      </p>
+    </address>
+  </div>
+
+  <div class="main_table_div">
+    <table class="main_table">
+      <tr class="t_header">
+        <th>Time</th>
+        <th>Duration</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Type</th>
+        <th>Breed</th>
+
+      </tr>
+      <tr class="main_data">
+        <td><%= @appointment.appointment_time %></td>
+        <td><%= @appointment.duration %> mins</td>
+        <td><%= @pet.name %></td>
+        <td><%= @pet.age %></td>
+        <td><%= @pet.type %></td>
+        <td><%= @pet.breed %></td>
+      </tr>
+    </table>
+  </div>
+  <div id="add_app">
+    <a href="/appointment/<%= @pet.id %>/edit"><button class="edit_icon"></button></a>
+    
+  </div>
+</div>
+<div id="med_notes_div">
+  
+</div>

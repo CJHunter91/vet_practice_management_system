@@ -7,7 +7,9 @@ end
 
 get '/appointments/:id' do
   @appointment = Appointment.find(params[:id])
-  erb(:show)
+  @pet = @appointment.get_pet
+  @owner = @pet.get_owner
+  erb(:"appointments/show")
 end
 
 get '/appointments/new' do

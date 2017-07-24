@@ -38,6 +38,7 @@
           <td>
             <form method="GET" action="/owners/<%= owner.id %>">
               <input type="hidden" name="owner_id" value="<%= owner.id %>">
+              <input type="hidden" name="appointment_id" value="<%= params[:appointment_id] %>">
               <input type="submit" name="<%= add_or_edit %>" value="<%= add_or_edit_button %>">
             </form>
           </td>

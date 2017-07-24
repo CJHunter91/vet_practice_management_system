@@ -18,3 +18,8 @@ get '/owners/:id' do
   @pets = @owner.get_pets
   erb(:'owners/show')
 end
+
+get '/owners/:id/edit' do 
+  @owner = Owner.find(params[:id])
+  erb(:'owners/edit')
+end

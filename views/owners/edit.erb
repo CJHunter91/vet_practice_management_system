@@ -1,0 +1,12 @@
+<h2>Edit owner details</h2>
+
+<form method="POST" action="/owners/edit">
+<label>Name</label>
+<input type="text" name="name" value="<%= @owner.name %>">
+<label>Address</label>
+<input type="text" name="address" value="<%= @owner.address %>">
+
+<label>Phone</label>
+<input type="tel" name="phone" value="<%= @owner.phone %>">
+<input type="submit" name="edit_owner" value="Edit Owner">
+</form>

@@ -1,5 +1,7 @@
 #add_app {
   display: flex;
+  /*would like to change to column*/
+  flex-direction: row;
   justify-content: flex-end;
   width: 30px;
   padding-right: 20px;

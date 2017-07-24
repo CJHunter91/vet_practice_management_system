@@ -14,21 +14,26 @@
       <% pet = appointment.get_pet %>
 
       <tr class="main_data">
-        <td><%= appointment.appointment_time %></td>
-        <td>Bloggs</td>
-        <td><%= pet.name %></td>
-        <td><%= pet.type %></td>
-        <td><%= pet.breed %></td>
-        <td>Dr Dolittle</td>
-      </tr>
-      <% end %>
-    </table>
+        <td colspan="6">
+          <a href="/appointments/<%= appointment.id %>">
+            <table>
+              <td><%= appointment.appointment_time %></td>
+              <td>Bloggs</td>
+              <td><%= pet.name %></td>
+              <td><%= pet.type %></td>
+              <td><%= pet.breed %></td>
+              <td>Dr Dolittle</td>
+            </table>
+          </a>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+    <div id="add_app">
+      <form method="GET" action="/owners">
+        <input class="add_icon" type="submit" name="new_appointment" value="">
+      </form>
+    </div>
   </div>
-  <div id="add_app">
-    <form method="GET" action="/owners">
-      <input class="add_icon" type="submit" name="new_appointment" value="">
-    </form>
-  </div>
-</div>
   
 

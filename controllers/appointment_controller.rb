@@ -4,7 +4,7 @@ require_relative('../models/appointment')
 get '/appointments' do
   @appointments = Appointment.get_all
   erb(:'appointments/index')
-end
+end 
 
 
 get '/appointments/new' do
@@ -37,4 +37,9 @@ end
 post '/appointments/edit' do 
   Appointment.new(params).update
   redirect to '/appointments/' + params[:id].to_s
+end
+
+post '/appointments/delete' do
+  Appointment.find(params['id']).delete
+  redirect to '/appointments'
 end

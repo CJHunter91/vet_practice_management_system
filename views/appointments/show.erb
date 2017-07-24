@@ -34,6 +34,13 @@
     <a href="/appointments/<%= @appointment.id %>/edit"><button class="edit_icon"></button></a>
     
   </div>
+  <div id="add_app">
+  <form method="POST" action="/appointments/delete">
+    <input type="hidden" name="id" value="<%= @appointment.id %>">
+    <input class="delete_icon" type="submit" name="delete_appointment" value="">
+  </form>
+    
+  </div>
 </div>
 <div id="med_notes_div">
   

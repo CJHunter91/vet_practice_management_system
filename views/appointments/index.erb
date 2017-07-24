@@ -12,13 +12,14 @@
       </tr>
       <% @appointments.each do |appointment| %>
       <% pet = appointment.get_pet %>
+      <% owner = pet.get_owner %>
 
       <tr class="main_data">
         <td colspan="6">
           <a href="/appointments/<%= appointment.id %>">
             <table>
               <td><%= appointment.appointment_time %></td>
-              <td>Bloggs</td>
+              <td><%= owner.name %></td>
               <td><%= pet.name %></td>
               <td><%= pet.type %></td>
               <td><%= pet.breed %></td>

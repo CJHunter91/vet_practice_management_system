@@ -50,8 +50,8 @@ class Pet
   def self.find(id)
     values = [id]
     sql = "SELECT * FROM pets
-      WHERE id = $1;"
-    pet = SqlRunner.run(sql, values)[0]
+      WHERE id = $1;"    
+    pet = SqlRunner.run(sql, values).first
     return Pet.new(pet)
   end
 

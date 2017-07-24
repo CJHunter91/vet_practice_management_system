@@ -3,11 +3,12 @@ require_relative('./pet')
 
 
 class Appointment
-  attr_reader :id, :appointment_time, :duration, :needs_seen, :pet_id
+  attr_reader :id, :appointment_time, :duration, :needs_seen, :reason,:pet_id
   def initialize(details)
     @id = details['id'].to_i if details['id']
     @appointment_time = details['appointment_time']
     @duration = details['duration'].to_i
+    @reason = details['reason']
     @pet_id = details['pet_id'].to_i
 
     #conversion of string into bool from db
@@ -27,21 +28,21 @@ class Appointment
   end
 
   def save
-    values = [@appointment_time, @duration, @needs_seen, @pet_id]
+    values = [@appointment_time, @duration, @needs_seen, @reason, @pet_id]
     sql = "INSERT INTO appointments
-    (appointment_time, duration, needs_seen, pet_id)
+    (appointment_time, duration, needs_seen, reason, pet_id)
     VALUES 
-    ($1, $2, $3, $4)
+    ($1, $2, $3, $4, $5)
     RETURNING id;"
     @id = SqlRunner.run(sql, values)[0]['id'].to_i
   end
 
   def update
-    values = [@id, @appointment_time, @duration, @needs_seen, @pet_id]
+    values = [@id, @appointment_time, @duration, @needs_seen, @reason, @pet_id]
     sql = "UPDATE appointments SET
-    (appointment_time, duration, needs_seen, pet_id)
+    (appointment_time, duration, needs_seen, reason, pet_id)
     =
-    ($2, $3, $4, $5) 
+    ($2, $3, $4, $5, $6 ) 
     WHERE id = $1;"
     SqlRunner.run(sql, values)
   end

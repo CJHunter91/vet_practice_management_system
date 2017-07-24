@@ -24,5 +24,6 @@ CREATE TABLE appointments(
   appointment_time TIME,
   duration INT4, 
   needs_seen BOOLEAN,
+  reason TEXT,
   pet_id INT4 REFERENCES pets (id) ON DELETE CASCADE
 );

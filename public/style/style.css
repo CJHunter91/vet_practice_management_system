@@ -21,11 +21,17 @@ body{
 
 .owner_details{
   display: flex;
+  min-width: 200px;
   justify-content: center;
   height:100px;
   line-height: 150%;
   font-size: 1.5em;
   padding-left: 10px;
+  
+}
+.owner_details address p{
+  padding: 10px;
+  border: solid 2px #0099CC;
 }
 
 

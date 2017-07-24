@@ -29,12 +29,12 @@ end
 get '/appointments/:id/edit' do
   @appointment = Appointment.find(params[:id])
   @pet = @appointment.get_pet
+  @owner = @pet.get_owner
   erb(:"appointments/edit")
 end
 
 # update
 post '/appointments/edit' do 
-  p params, "*******************"
   Appointment.new(params).update
   redirect to '/appointments/' + params[:id].to_s
 end

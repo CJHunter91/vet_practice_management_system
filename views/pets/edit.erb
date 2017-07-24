@@ -1,6 +1,6 @@
 <h2>Edit <%= @pet.name %> details</h2>
 
-<form method="post" action="/pet">
+<form method="post" action="/pet/edit">
   <label>Name</label>
   <input type="text" name="name" value="<%= @pet.name %>">
   <label>Age</label>
@@ -9,6 +9,8 @@
   <input type="text" name="type" value="<%= @pet.type %>">
   <label>Breed</label>
   <input type="text" name="breed" value="<%= @pet.breed %>">
+  <input type="hidden" name="id" value= "<%= @pet.id %>">
+
   <input type="hidden" name="owner_id" value= "<%= @pet.owner_id %>">
   <input type="submit" name="edit_pet" value="Edit Pet">
 </form>

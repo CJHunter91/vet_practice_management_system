@@ -19,3 +19,8 @@ get '/pet/:id/edit' do
   @pet = Pet.find(params[:id])
   erb(:"pets/edit")
 end
+
+post '/pet/edit' do 
+  Pet.new(params).update
+  redirect to '/pet/' + params[:id].to_s
+end 

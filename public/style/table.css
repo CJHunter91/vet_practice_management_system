@@ -13,9 +13,16 @@
 .main_table td, th, a{
     text-align: center;
     vertical-align: middle;
-    width: 20em;
+    width: 100em;
     min-height: 10em;
+    padding: 6px;
+
 }
+
+.embedded_table td, th, a{
+  padding: 2px;
+}
+
 
 .main_table th:first-child, td:first-child{
     border-top-left-radius: 10px;

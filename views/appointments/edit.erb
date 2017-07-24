@@ -33,7 +33,11 @@ end
     <option value="15:00">15mins</option>
     <option value="30:00">30mins</option>
   </select>
+  <label>Reason</label>
+  <input type="text" name="reason" value="<%= @appointment.reason %>">
+
   <input type="hidden" name="id" value="<%= @appointment.id %>">
   <input type="hidden" name="pet_id" value="<%= pet_id %>">
+
   <input type="submit" name="edit_appointment" value="Edit Appointment">
 </form>

@@ -6,14 +6,6 @@ get '/appointments' do
   erb(:'appointments/index')
 end
 
-# show
-get '/appointments/:id' do
-  @appointment = Appointment.find(params[:id])
-  @pet = @appointment.get_pet
-  @owner = @pet.get_owner
-  erb(:"appointments/show")
-end
-
 
 get '/appointments/new' do
   erb(:'appointments/new')
@@ -31,6 +23,14 @@ get '/appointments/:id/edit' do
   @pet = @appointment.get_pet
   @owner = @pet.get_owner
   erb(:"appointments/edit")
+end
+
+# show
+get '/appointments/:id' do
+  @appointment = Appointment.find(params[:id])
+  @pet = @appointment.get_pet
+  @owner = @pet.get_owner
+  erb(:"appointments/show")
 end
 
 # update

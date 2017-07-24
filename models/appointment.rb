@@ -52,6 +52,14 @@ class Appointment
     SqlRunner.run(sql, values)
   end
 
+  def self.find(id)
+    values = [id]
+    sql = "SELECT * FROM appointments
+      WHERE id = $1;"
+    appointment = SqlRunner.run(sql, values).first
+    return Appointment.new(appointment)
+  end
+
   def self.get_all
     values = []
     sql = "SELECT * FROM appointments;"

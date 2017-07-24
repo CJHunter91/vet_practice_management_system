@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('./owner')
 
 class Pet
   attr_reader :id, :name, :age, :type, :breed, :owner_id
@@ -19,6 +20,14 @@ class Pet
       ($1, $2, $3, $4, $5)
       RETURNING id;"
       @id = SqlRunner.run(sql, values)[0]['id'].to_i
+  end
+
+  def find_owner
+    values = [@owner_id]
+    sql = "SELECT * FROM owners
+      WHERE id = $1;"
+    owner = SqlRunner.run(sql, values).first
+    return Owner.new(owner)
   end
 
   def update

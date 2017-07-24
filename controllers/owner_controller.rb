@@ -23,3 +23,8 @@ get '/owners/:id/edit' do
   @owner = Owner.find(params[:id])
   erb(:'owners/edit')
 end
+
+post '/owners/edit' do
+  Owner.new(params).update
+  redirect to '/owners/' + params[:id].to_s
+end

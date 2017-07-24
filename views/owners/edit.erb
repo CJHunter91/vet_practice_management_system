@@ -8,5 +8,6 @@
 
 <label>Phone</label>
 <input type="tel" name="phone" value="<%= @owner.phone %>">
-<input type="submit" name="edit_owner" value="Edit Owner">
+<input type="hidden" name="id" value="<%= @owner.id %>">
+  <input type="submit" name="edit_owner" value="Edit Owner">
 </form>

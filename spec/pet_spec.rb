@@ -20,13 +20,18 @@ class TestPet < MiniTest::Test
       'breed' => 'Short Haired', 
       'owner_id' => @owner1.id
       })
+    @pet1.save
   end
 
   def test_owner_id
     assert_equal(@owner1.id, @pet1.owner_id)
   end
 
-  def test_find_owner
-    assert_equal(@owner1, @pet1.find_owner)
+  def test_get_owner
+    assert_equal(@owner1, @pet1.get_owner)
+  end
+
+  def test_self_find
+    assert_equal(@pet1, Pet.find(@pet1.id))
   end
 end

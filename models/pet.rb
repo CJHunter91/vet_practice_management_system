@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner')
 require_relative('./owner')
+require('pry')
 
 class Pet
   attr_reader :id, :name, :age, :type, :breed, :owner_id
@@ -22,7 +23,7 @@ class Pet
       @id = SqlRunner.run(sql, values)[0]['id'].to_i
   end
 
-  def find_owner
+  def get_owner
     values = [@owner_id]
     sql = "SELECT * FROM owners
       WHERE id = $1;"
@@ -44,6 +45,14 @@ class Pet
     values = [@id]
     sql = "DELETE FROM pets WHERE id = $1;"
     SqlRunner.run(sql, values)
+  end
+
+  def self.find(id)
+    values = [id]
+    sql = "SELECT * FROM pets
+      WHERE id = $1;"
+    pet = SqlRunner.run(sql, values)[0]
+    return Pet.new(pet)
   end
 
   def self.get_all

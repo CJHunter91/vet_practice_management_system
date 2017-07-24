@@ -21,6 +21,7 @@ post '/appointments' do
   redirect to '/appointments'
 end
 
-# get '/appointments/:id/edit' do 
-#   erb(:"appointments/edit")
-# end
+get '/appointments/:id/edit' do
+  @appointment = Appointment.find(params[:id])
+  erb(:"appointments/edit")
+end

@@ -1,4 +1,14 @@
-  
+  <% 
+  if params.include?(:new_appointment)
+    add_or_edit = "new_appointment"
+    add_or_edit_button = "New Appointment"
+  else 
+    add_or_edit = "edit_appointment"
+    add_or_edit_button = "Edit Appointment"
+
+  end
+   %>
+
 <div class="table_buttons">
 <div class="owner_details">
 <address>
@@ -17,7 +27,7 @@
         <th>Name</th>
         <th>Type</th>
         <th>Breed</th>
-        <% if params[:new_appointment]  %>
+        <% if params[:new_appointment] || params[:edit_appointment] %>
         <th>Select Pet</th>
         <% end %>
       </tr>
@@ -26,11 +36,11 @@
         <td><%= pet.name %></td>
         <td><%= pet.type %></td>
         <td><%= pet.breed %></td>
-        <% if params[:new_appointment] %>
+        <% if params[:new_appointment] || params[:edit_appointment] %>
         <td>
           <form method="GET" action="/appointments/new">
             <input type="hidden" name="pet_id" value="<%= pet.id %>">
-            <input type="submit" name="new_appointment" value="New Appointment">
+            <input type="submit" name="<%= add_or_edit %>" value="<%= add_or_edit_button %>">
           </form>
         </td>
         <% end %>

@@ -34,7 +34,8 @@ pet1 = Pet.new({
   'name' => 'KitKat', 
   'age' => 4,
   'type' => 'Cat', 
-  'breed' => 'Short Haired', 
+  'breed' => 'Short Haired',
+  'sex' => 'Female', 
   'owner_id' => owner1.id
   })
 pet2 = Pet.new({
@@ -42,13 +43,15 @@ pet2 = Pet.new({
   'age' => 4,
   'type' => 'Muppet', 
   'breed' => 'Whatever', 
+  'sex' => 'Male', 
   'owner_id' => owner2.id
   })
 pet3 = Pet.new({
   'name' => 'Mr Pickles', 
   'age' => 10,
   'type' => 'Dog', 
-  'breed' => 'Collie', 
+  'breed' => 'Collie',
+  'sex' => 'Male',  
   'owner_id' => owner2.id
   })
 pet4 = Pet.new({
@@ -56,6 +59,7 @@ pet4 = Pet.new({
   'age' => 10,
   'type' => 'Dog', 
   'breed' => 'Great Dane', 
+  'sex' => 'Male', 
   'owner_id' => owner2.id
   })
 

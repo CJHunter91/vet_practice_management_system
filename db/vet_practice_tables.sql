@@ -15,6 +15,7 @@ CREATE TABLE pets(
   age INT4, 
   type VARCHAR(255),
   breed VARCHAR(255),
+  sex VARCHAR(255),
   owner_id INT4 REFERENCES owners (id) ON DELETE CASCADE
 );
 

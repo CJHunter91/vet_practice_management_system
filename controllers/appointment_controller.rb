@@ -11,4 +11,5 @@ end
 
 post '/appointments' do
   Appointment.new(params).save
+  redirect to '/appointments'
 end

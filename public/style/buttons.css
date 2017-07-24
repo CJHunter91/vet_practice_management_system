@@ -5,12 +5,19 @@
   padding-right: 20px;
 }
 
-.add_icon{
-  background: url(../images/png/add.png);
+.add_icon, .edit_icon{
   width: 37px;
   height: 37px;
   border-radius: 10px;
   border-color: #0099CC;
   box-shadow: 4px 4px 5px #0099CC;
   cursor: pointer;
+}
+
+.add_icon{
+  background: url(../images/png/add.png);
+}
+
+.edit_icon{
+  background: url(../images/png/edit.png);
 }

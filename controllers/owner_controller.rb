@@ -28,3 +28,8 @@ post '/owners/edit' do
   Owner.new(params).update
   redirect to '/owners/' + params[:id].to_s
 end
+
+post '/owners/delete' do
+  Owner.find(params[:id]).delete
+  redirect to '/owners'
+end

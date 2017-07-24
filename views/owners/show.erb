@@ -1,3 +1,4 @@
+  <!-- show owner -->
   <% 
   # conditional which checks how the page was directed and changes the function of buttons and path
   if params.include?(:new_appointment)
@@ -56,6 +57,14 @@
   </div>
   <div id="add_app">
     <a href="/owners/<%= @owner.id %>/edit"><button class="edit_icon"></button></a>
+    
+  </div>
+
+  <div id="add_app">
+  <form method="POST" action="/owners/delete">
+    <input type="hidden" name="id" value="<%= @owner.id %>">
+    <input class="delete_icon" type="submit" name="delete_owner" value="">
+  </form>
     
   </div>
 </div>

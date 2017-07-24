@@ -5,7 +5,7 @@
   padding-right: 20px;
 }
 
-.add_icon, .edit_icon{
+.add_icon, .edit_icon , .delete_icon{
   width: 37px;
   height: 37px;
   border-radius: 10px;
@@ -20,4 +20,8 @@
 
 .edit_icon{
   background: url(../images/png/edit.png);
+}
+
+.delete_icon{
+  background: url(../images/png/delete.png);
 }

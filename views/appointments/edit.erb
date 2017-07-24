@@ -1,3 +1,11 @@
+<% 
+if params[:pet_id]
+ pet_id = params[:pet_id]
+else
+  pet_id = @pet.id
+end
+ %>
+
 <h2>Edit Appointment</h2>
 <% if !params[:owner_id] %>
 <form method="GET" action="/owners">
@@ -7,7 +15,8 @@
 <% end %>
 
 <form method="POST" action="/appointments/edit">
-  <input type="hidden" name="pet_id" value="<%= params[:pet_id] %>">
+  <input type="hidden" name="id" value="<%= @appointment.id %>">
+
   <label>Time:</label>
   <select name="appointment_time">
     <option value="09:00">09:00</option>
@@ -23,5 +32,6 @@
     <option value="15:00">15mins</option>
     <option value="30:00">30mins</option>
   </select>
+  <input type="hidden" name="pet_id" value="<%= pet_id %>">
   <input type="submit" name="edit_appointment" value="Edit Appointment">
 </form>

@@ -15,7 +15,10 @@ class Pet
   end
 
   def save
+      @age = format_date(@age)
+      p @age, "**************"
       values = [@name, @age, @type, @breed, @sex, @owner_id]
+      
       sql = "INSERT INTO pets
       (name, age, type, breed, sex, owner_id)
       VALUES
@@ -33,7 +36,11 @@ class Pet
   end
 
   def update
+    @age = format_date(@age)
+    p @age, "**************"
+    
     values = [@name, @age, @type, @breed, @sex, @owner_id, @id]
+    
     sql = "UPDATE pets SET
     (name, age, type, breed, sex, owner_id)
     =
@@ -42,11 +49,20 @@ class Pet
     SqlRunner.run(sql, values)
   end
 
+  def format_date(date)
+    if date.split('-')[0].size == 4
+      return date.split('-').reverse.join('-')
+    end
+    return @age
+  end
+
   def delete 
     values = [@id]
     sql = "DELETE FROM pets WHERE id = $1;"
     SqlRunner.run(sql, values)
   end
+
+  
 
   def self.find(id)
     values = [id]

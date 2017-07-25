@@ -7,10 +7,13 @@ get '/pet/:id' do
 end
 
 get '/pet/:id/new' do
+
   erb(:"pets/new")
 end
 
 post '/pet' do 
+  p params, "************"
+
   Pet.new( params ).save
   redirect to '/owners/' + params[:owner_id].to_s
 end
@@ -21,6 +24,7 @@ get '/pet/:id/edit' do
 end
 
 post '/pet/edit' do 
+  p params, "************"
   Pet.new(params).update
   redirect to '/pet/' + params[:id].to_s
 end 

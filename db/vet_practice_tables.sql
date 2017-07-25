@@ -22,7 +22,7 @@ CREATE TABLE owners(
 CREATE TABLE pets(
   id SERIAL4 PRIMARY KEY,
   name VARCHAR(255),
-  age DATE, 
+  age VARCHAR(255), 
   type VARCHAR(255),
   breed VARCHAR(255),
   sex VARCHAR(255),

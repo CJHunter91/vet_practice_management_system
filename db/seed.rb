@@ -70,7 +70,7 @@ owner3.save
 
 pet1 = Pet.new({
   'name' => 'KitKat', 
-  'age' => "01-12-2012",
+  'age' => "2012-05-12",
   'type' => 'Cat', 
   'breed' => 'Short Haired',
   'sex' => 'Female', 
@@ -94,7 +94,7 @@ pet3 = Pet.new({
   })
 pet4 = Pet.new({
   'name' => 'Scooby', 
-  'age' => "1982-09-09",
+  'age' => "09-09-1982",
   'type' => 'Dog', 
   'breed' => 'Great Dane', 
   'sex' => 'Male', 

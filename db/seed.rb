@@ -56,7 +56,7 @@ pet3 = Pet.new({
   })
 pet4 = Pet.new({
   'name' => 'Scooby', 
-  'age' => "09-09-1982",
+  'age' => "1982-09-09",
   'type' => 'Dog', 
   'breed' => 'Great Dane', 
   'sex' => 'Male', 

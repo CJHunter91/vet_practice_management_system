@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS appointments;
 DROP TABLE IF EXISTS pets;
 DROP TABLE IF EXISTS owners;
 
-SET datestyle = "ISO, DMY";
+SET datestyle = "SQL, DMY";
 
 CREATE TABLE owners(
   id SERIAL4 PRIMARY KEY,

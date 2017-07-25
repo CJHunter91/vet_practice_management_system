@@ -1,8 +1,13 @@
-<h2>Create New Appointment</h2>
+<h2>Create New Appointment</h2><br>
+<% if @times == [] %>
+<p class="no_bookings">
+<%= "There are no available appointments for this day" %>
+</p><br>
+<% end %>
 <form method="POST" action="/appointments">
   <input type="hidden" name="pet_id" value="<%= params[:pet_id] %>">
   <label>Time:</label>
-  <select name="appointment_time_id">
+  <select name="appointment_time_id" required>
     <% @times.each do |time| %>
     <option value="<%= time.id %>"><%= time.available_time %></option>
     <% end %>

@@ -13,8 +13,10 @@
     <div class="main_table_div">
       <table class="main_table">
         <tr class="t_header">
-          <th>Name</th>
+          <th>First Name</th>
+          <th>Surname</th>
           <th>Address</th>
+          <th>Postcode</th>
           <th>Phone</th>
          <% if params[:new_appointment] || params[:edit_appointment]  %>
           <th>Select Client</th>
@@ -23,12 +25,14 @@
         <% @owners.each do |owner| %>
 
         <tr class="main_data" >
-          <td colspan="3">
+          <td colspan="5">
           <a href="/owners/<%= owner.id %>">
             <table>
-              <td><%= owner.name %></td>
+              <td><%= owner.first_name %></td>
+              <td><%= owner.last_name %></td>
               <td><%= owner.address %></td>
-          <td><%= owner.phone %></td>
+              <td><%= owner.postcode %></td>
+              <td><%= owner.phone %></td>
             </a>
             </table>
           </td>

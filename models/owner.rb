@@ -3,12 +3,14 @@ require_relative('./pet')
 
 class Owner
 
-  attr_reader :id, :name, :address, :phone
+  attr_reader :id, :first_name, :last_name, :address, :postcode, :phone
 
   def initialize(details)
     @id = details['id'].to_i if details['id']
-    @name = details['name']
+    @first_name = details['first_name']
+    @last_name = details['last_name']
     @address = details['address']
+    @postcode = details['postcode']
     @phone = details['phone']
   end
 
@@ -21,22 +23,22 @@ class Owner
   end
 
   def save
-    values = [@name, @address, @phone]
+    values = [@first_name, @last_name, @address, @postcode, @phone]
     sql = "INSERT INTO owners
-      (name, address, phone)
+      (first_name, last_name, address, postcode, phone)
       VALUES
-      ($1, $2, $3)
+      ($1, $2, $3, $4, $5)
       RETURNING id;"
       @id = SqlRunner.run(sql, values)[0]['id'].to_i
   end
   
   def update
-    values = [@name, @address, @phone, @id]
+    values = [@first_name, @last_name, @address, @postcode, @phone, @id]
     sql = "UPDATE owners SET
-      (name, address, phone)
+      (first_name, last_name, address, postcode, phone)
       =
-      ($1, $2, $3)
-      WHERE id = $4;"
+      ($1, $2, $3, $4, $5)
+      WHERE id = $6;"
       SqlRunner.run(sql, values)
   end
 

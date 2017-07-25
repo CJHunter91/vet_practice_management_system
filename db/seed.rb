@@ -41,20 +41,26 @@ time6.save
 time7.save
 
 owner1 = Owner.new({
-  'name' => 'Chris',
-  'address' => 'Edinburgh',
+  'first_name' => 'Chris',
+  'last_name' => 'Hunter',
+  'address' => 'Comely Bank Terrace',
+  'postcode' => 'EH4 1AT',
   'phone' => '01312281211'
   })
 owner2 = Owner.new({
-  'name' => 'Dell',
-  'address' => 'Leith',
+  'first_name' => 'Dell',
+  'last_name' => 'Middlemiss',
+  'address' => '3 Juniper Hill',
+  'postcode' => 'EH12 5JZ',
   'phone' => '01312281321'
   })
 
 owner3 = Owner.new({
-  'name' => 'John',
-  'address' => 'Glasgow',
-  'phone' => '01412281231'
+  'first_name' => 'John',
+  'last_name' => 'John',
+  'address' => '3 Inverleith Place',
+  'postcode' => 'EH3 2HY',
+  'phone' => '01312281231'
   })
 
 owner1.save

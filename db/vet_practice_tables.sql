@@ -12,8 +12,10 @@ CREATE TABLE appointment_times(
 
 CREATE TABLE owners(
   id SERIAL4 PRIMARY KEY,
-  name VARCHAR(255),
+  first_name VARCHAR(255),
+  last_name VARCHAR(255),
   address VARCHAR(255),
+  postcode VARCHAR(255),
   phone VARCHAR(255)
 );
 

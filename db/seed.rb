@@ -32,7 +32,7 @@ owner3.save
 
 pet1 = Pet.new({
   'name' => 'KitKat', 
-  'age' => 4,
+  'age' => "01-12-2012",
   'type' => 'Cat', 
   'breed' => 'Short Haired',
   'sex' => 'Female', 
@@ -40,7 +40,7 @@ pet1 = Pet.new({
   })
 pet2 = Pet.new({
   'name' => 'Gonzo', 
-  'age' => 4,
+  'age' => "04-05-1989",
   'type' => 'Muppet', 
   'breed' => 'Whatever', 
   'sex' => 'Male', 
@@ -48,7 +48,7 @@ pet2 = Pet.new({
   })
 pet3 = Pet.new({
   'name' => 'Mr Pickles', 
-  'age' => 10,
+  'age' => "10-08-2010",
   'type' => 'Dog', 
   'breed' => 'Collie',
   'sex' => 'Male',  
@@ -56,7 +56,7 @@ pet3 = Pet.new({
   })
 pet4 = Pet.new({
   'name' => 'Scooby', 
-  'age' => 10,
+  'age' => "09-09-1982",
   'type' => 'Dog', 
   'breed' => 'Great Dane', 
   'sex' => 'Male', 

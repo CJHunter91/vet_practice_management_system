@@ -2,6 +2,8 @@ DROP TABLE IF EXISTS appointments;
 DROP TABLE IF EXISTS pets;
 DROP TABLE IF EXISTS owners;
 
+SET datestyle = "ISO, DMY";
+
 CREATE TABLE owners(
   id SERIAL4 PRIMARY KEY,
   name VARCHAR(255),
@@ -12,7 +14,7 @@ CREATE TABLE owners(
 CREATE TABLE pets(
   id SERIAL4 PRIMARY KEY,
   name VARCHAR(255),
-  age INT4, 
+  age DATE, 
   type VARCHAR(255),
   breed VARCHAR(255),
   sex VARCHAR(255),

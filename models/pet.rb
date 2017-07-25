@@ -7,7 +7,7 @@ class Pet
   def initialize(details)
     @id = details['id'].to_i if details['id']
     @name = details['name']
-    @age = details['age'].to_i
+    @age = details['age']
     @type = details['type']
     @breed = details['breed']
     @sex = details['sex']

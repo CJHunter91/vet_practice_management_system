@@ -27,10 +27,14 @@
               <td><%= pet.breed %></td>
               <td><%= appointment.reason %></td>
               <td>
+              <% if appointment.arrival %>
+                <%= appointment.arrival %>
+              <% else %>
               <form method="GET" action="/appointments">
                 <input type="hidden" name="appointment" value="<%= appointment.id %>">
                 <input type="submit" name="submit" value="Arrived">
               </form>
+              <% end %>
               </td>
             </table>
           </a>

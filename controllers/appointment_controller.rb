@@ -3,7 +3,11 @@ require_relative('../models/appointment_time')
 
 # index
 get '/appointments' do
-  
+  if params['submit'] == "Arrived"
+    @appointment = Appointment.find(params['appointment'])
+    @appointment.set_arrival
+  end
+
   @appointments = Appointment.get_all
   erb(:'appointments/index')
 end 

@@ -24,4 +24,11 @@ class AppointmentTime
     sql = "DELETE FROM appointment_times"
     SqlRunner.run(sql, values)
   end
+
+  def self.get_all
+    values = []
+    sql = "SELECT * FROM appointment_times"
+    times = SqlRunner.run(sql, values)
+    return times.map{|time| AppointmentTime.new(time)}
+  end
 end

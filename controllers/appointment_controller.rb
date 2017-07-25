@@ -1,4 +1,5 @@
 require_relative('../models/appointment')
+require_relative('../models/appointment_time')
 
 # index
 get '/appointments' do
@@ -8,6 +9,7 @@ end
 
 
 get '/appointments/new' do
+  @times = AppointmentTime.get_all
   erb(:'appointments/new')
 end
 
@@ -28,6 +30,7 @@ end
 # show
 get '/appointments/:id' do
   @appointment = Appointment.find(params[:id])
+  @time = @appointment.get_time.available_time
   @pet = @appointment.get_pet
   @owner = @pet.get_owner
   erb(:"appointments/show")

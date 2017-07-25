@@ -27,3 +27,6 @@
 .delete_icon{
   background: url(../images/png/delete.png);
 }
+.complete_icon{
+  background: url(../images/png/check-mark.png);
+}

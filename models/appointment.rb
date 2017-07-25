@@ -8,7 +8,7 @@ class Appointment
   attr_accessor :arrival
   def initialize(details)
     @id = details['id'].to_i if details['id']
-    @appointment_time_id = details['appointment_time_id']
+    @appointment_time_id = details['appointment_time_id'].to_i
     @duration = 30
     @reason = details['reason']
     @pet_id = details['pet_id'].to_i

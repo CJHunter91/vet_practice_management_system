@@ -21,7 +21,7 @@ end
 <form method="POST" action="/appointments/edit">
   <label>Time:</label>
   <select name="appointment_time_id">
-    <option value="<%= @current_time.id %>" disabled selected><%= @current_time.available_time %></option>
+    <option value="<%= @current_time.id %>"><%= @current_time.available_time %></option>
     <% @times.each do |time| %>
     <option value="<%= time.id %>"><%= time.available_time %></option>
     <% end %>

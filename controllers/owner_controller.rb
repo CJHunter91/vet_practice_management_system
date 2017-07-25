@@ -11,6 +11,7 @@ end
 
 post '/owners' do 
   Owner.new(params).save
+  redirect to '/owners'
 end
 
 get '/owners/:id' do 

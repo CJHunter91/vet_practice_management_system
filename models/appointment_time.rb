@@ -19,6 +19,7 @@ class AppointmentTime
 
   def self.delete_all
     values = []
-    SqlRunner.run()
+    sql = "DELETE FROM appointment_times"
+    SqlRunner.run(sql, values)
   end
 end

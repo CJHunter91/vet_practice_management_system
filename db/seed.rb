@@ -8,6 +8,7 @@ require_relative('../models/appointment_time')
 Appointment.delete_all
 Pet.delete_all
 Owner.delete_all
+AppointmentTime.delete_all
 
 time1 = AppointmentTime.new({
   'available_time' => "09:00"

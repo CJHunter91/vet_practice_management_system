@@ -7,7 +7,7 @@
         <th>Patient</th>
         <th>Type</th>
         <th>Breed</th>
-        <th>Vet</th>
+        <th>Reason</th>
         <!-- surname, address, name, species, breed sex(ME MN FE FN U) dob potentialy reason for appointment-->
       </tr>
       <% @appointments.each do |appointment| %>
@@ -23,7 +23,7 @@
               <td><%= pet.name %></td>
               <td><%= pet.type %></td>
               <td><%= pet.breed %></td>
-              <td>Dr Dolittle</td>
+              <td><%= appointment.reason %></td>
             </table>
           </a>
         </tr>

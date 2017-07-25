@@ -6,7 +6,7 @@ SET datestyle = "SQL, DMY";
 
 CREATE TABLE appointment_times(
   id SERIAL4 PRIMARY KEY,
-  appointment_time TIME
+  available_time TIME
 );
 
 CREATE TABLE owners(

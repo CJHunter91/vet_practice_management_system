@@ -2,11 +2,42 @@ require('pry')
 require_relative('../models/appointment')
 require_relative('../models/owner')
 require_relative('../models/pet')
+require_relative('../models/appointment_time')
 
 
 Appointment.delete_all
 Pet.delete_all
 Owner.delete_all
+
+time1 = AppointmentTime.new({
+  'available_time' => "09:00"
+})
+time2 = AppointmentTime.new({
+  'available_time' => "09:30"
+})
+time3 = AppointmentTime.new({
+  'available_time' => "10:00"
+})
+time4 = AppointmentTime.new({
+  'available_time' => "10:30"
+})
+time5 = AppointmentTime.new({
+  'available_time' => "11:00"
+})
+time6 = AppointmentTime.new({
+  'available_time' => "11:30"
+})
+time7 = AppointmentTime.new({
+  'available_time' => "12:00"
+})
+
+time1.save
+time2.save
+time3.save
+time4.save
+time5.save
+time6.save
+time7.save
 
 owner1 = Owner.new({
   'name' => 'Chris',

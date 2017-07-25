@@ -28,7 +28,7 @@ end
 get '/appointments/:id/edit' do
   @appointment = Appointment.find(params[:id])
   @current_time = @appointment.get_time
-  # p @current_time, "**********"
+
   @times = AppointmentTime.get_available_times
   @pet = @appointment.get_pet
   @owner = @pet.get_owner
@@ -37,9 +37,7 @@ end
 
 # show
 get '/appointments/:id' do
-  p params, "***********"
   @appointment = Appointment.find(params[:id])
-  p @appointment
   @time = @appointment.get_time.available_time
   @pet = @appointment.get_pet
   @owner = @pet.get_owner

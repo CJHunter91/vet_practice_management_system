@@ -19,6 +19,16 @@ class AppointmentTime
     @id = SqlRunner.run(sql, values)[0]['id']
   end
 
+  def self.get_available_times
+    values = []
+    sql = "SELECT appointment_times.* FROM appointment_times
+    LEFT JOIN appointments 
+    ON appointment_times.id = appointments.appointment_time_id 
+    WHERE appointments.appointment_time_id IS NULL "
+    times = SqlRunner.run(sql, values)
+    return times.map{|time| AppointmentTime.new(time)}
+  end
+
   def self.delete_all
     values = []
     sql = "DELETE FROM appointment_times"

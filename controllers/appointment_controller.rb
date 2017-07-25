@@ -9,7 +9,7 @@ end
 
 
 get '/appointments/new' do
-  @times = AppointmentTime.get_all
+  @times = AppointmentTime.get_available_times
   erb(:'appointments/new')
 end
 

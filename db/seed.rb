@@ -70,28 +70,24 @@ pet4.save
 
 appointment1 = Appointment.new({
   'appointment_time' => '09:00', 
-  'duration' => 10,
   'needs_seen' => true, 
   'pet_id' => pet1.id, 
   'reason' => "Needs vacinated."
   })
 appointment2 = Appointment.new({
   'appointment_time' => '09:30', 
-  'duration' => 10,
   'needs_seen' => true, 
   'pet_id' => pet2.id,
   'reason' => "Lump on abdomen." 
   })
 appointment3 = Appointment.new({
   'appointment_time' => '10:00', 
-  'duration' => 10,
   'needs_seen' => true, 
   'pet_id' => pet3.id,
   'reason' => 'Regular checkup.' 
   })
 appointment4 = Appointment.new({
   'appointment_time' => '10:30', 
-  'duration' => 10,
   'needs_seen' => true, 
   'pet_id' => pet4.id,
   'reason' => "Difficulty breathing." 

@@ -4,6 +4,11 @@ DROP TABLE IF EXISTS owners;
 
 SET datestyle = "SQL, DMY";
 
+CREATE TABLE appointment_times(
+  id SERIAL4 PRIMARY KEY,
+  appointment_time TIME
+);
+
 CREATE TABLE owners(
   id SERIAL4 PRIMARY KEY,
   name VARCHAR(255),

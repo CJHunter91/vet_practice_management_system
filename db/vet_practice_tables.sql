@@ -29,7 +29,7 @@ CREATE TABLE pets(
 
 CREATE TABLE appointments(
   id SERIAL4 PRIMARY KEY,
-  appointment_time_id INT4 REFERENCES appointment_times (id) 
+  appointment_time_id INT4 REFERENCES appointment_times (id), 
   duration INT4, 
   needs_seen BOOLEAN,
   reason TEXT,

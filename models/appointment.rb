@@ -30,6 +30,10 @@ class Appointment
 
   def get_time
     values = [@appointment_time_id]
+    sql = "SELECT * FROM appointment_times
+      WHERE id = $1"
+    time = SqlRunner.run(sql, values)[0]
+    return AppointmentTime.new(time)
   end
 
   def save

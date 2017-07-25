@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS appointments;
 DROP TABLE IF EXISTS pets;
 DROP TABLE IF EXISTS owners;
+DROP TABLE IF EXISTS appointment_times;
 
 SET datestyle = "SQL, DMY";
 
@@ -28,7 +29,7 @@ CREATE TABLE pets(
 
 CREATE TABLE appointments(
   id SERIAL4 PRIMARY KEY,
-  appointment_time TIME,
+  appointment_time_id INT4 REFERENCES appointment_times (id) 
   duration INT4, 
   needs_seen BOOLEAN,
   reason TEXT,

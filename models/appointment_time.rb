@@ -2,6 +2,8 @@ require_relative('../db/sql_runner')
 
 class AppointmentTime
 
+  attr_reader :id, :available_time
+
   def initialize(params)
     @id = params['id'].to_i if params['id']
     @available_time = params['available_time']

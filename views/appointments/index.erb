@@ -27,7 +27,9 @@
               <td><%= pet.breed %></td>
               <td><%= appointment.reason %></td>
               <td>
-              <% if appointment.arrival %>
+              <% if !appointment.needs_seen %>
+              Complete
+              <% elsif appointment.arrival %>
                 <%= appointment.arrival %>
               <% else %>
               <form method="GET" action="/appointments">

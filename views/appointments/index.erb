@@ -8,6 +8,7 @@
         <th>Type</th>
         <th>Breed</th>
         <th>Reason</th>
+        <th>Arrival</th>
         <!-- surname, address, name, species, breed sex(ME MN FE FN U) dob potentialy reason for appointment-->
       </tr>
       <% @appointments.each do |appointment| %>
@@ -16,7 +17,7 @@
       <% owner = pet.get_owner %>
 
       <tr class="main_data">
-        <td colspan="6">
+        <td colspan="7">
           <a href="/appointments/<%= appointment.id %>">
             <table >
               <td><%= time.available_time %></td>
@@ -25,6 +26,12 @@
               <td><%= pet.type %></td>
               <td><%= pet.breed %></td>
               <td><%= appointment.reason %></td>
+              <td>
+              <form method="GET" action="/appointments">
+                <input type="hidden" name="time_stamp">
+                <input type="submit" name="submit" value="Arrived">
+              </form>
+              </td>
             </table>
           </a>
         </tr>

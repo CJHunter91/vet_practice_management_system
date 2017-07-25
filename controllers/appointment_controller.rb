@@ -22,6 +22,8 @@ end
 
 get '/appointments/:id/edit' do
   @appointment = Appointment.find(params[:id])
+  @current_time = @appointment.get_time
+  @times = AppointmentTime.get_available_times
   @pet = @appointment.get_pet
   @owner = @pet.get_owner
   erb(:"appointments/edit")

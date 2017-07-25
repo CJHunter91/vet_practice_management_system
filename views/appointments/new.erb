@@ -2,15 +2,10 @@
 <form method="POST" action="/appointments">
   <input type="hidden" name="pet_id" value="<%= params[:pet_id] %>">
   <label>Time:</label>
-  <select name="appointment_time">
+  <select name="appointment_time_id">
     <% @times.each do |time| %>
-    <option value="<%= time.available_time %>"><%= time.available_time %></option>
+    <option value="<%= time.id %>"><%= time.available_time %></option>
     <% end %>
-  </select>
-  <label>Duration:</label>
-  <select name = "duration">
-    <option value="15:00">15mins</option>
-    <option value="30:00">30mins</option>
   </select>
   <label>Reason</label>
   <input type="text" name="reason">

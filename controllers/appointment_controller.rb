@@ -3,6 +3,7 @@ require_relative('../models/appointment_time')
 
 # index
 get '/appointments' do
+  
   @appointments = Appointment.get_all
   erb(:'appointments/index')
 end 

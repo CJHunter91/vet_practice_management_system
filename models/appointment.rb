@@ -4,7 +4,8 @@ require_relative('./appointment_time')
 
 
 class Appointment
-  attr_reader :id, :appointment_time_id, :duration, :needs_seen, :reason, :pet_id, :arrival
+  attr_reader :id, :appointment_time_id, :duration, :needs_seen, :reason, :pet_id
+  attr_accessor :arrival
   def initialize(details)
     @id = details['id'].to_i if details['id']
     @appointment_time_id = details['appointment_time_id']
@@ -18,6 +19,13 @@ class Appointment
     else
       @needs_seen = true
     end
+  end
+
+  def set_arrival
+    time = Time.now
+    time = time.strftime("%H:%M:%S")
+    @arrival = time
+    update()
   end
 
   def get_pet
@@ -47,7 +55,7 @@ class Appointment
   end
 
   def update
-    values = [@id, @appointment_time_id, @duration, @needs_seen, @reason, @pet_id]
+    values = [@id, @appointment_time_id, @duration, @needs_seen, @reason, @arrival, @pet_id]
     sql = "UPDATE appointments SET
     (appointment_time_id, duration, needs_seen, reason, arrival, pet_id)
     =

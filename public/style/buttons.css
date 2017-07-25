@@ -7,7 +7,7 @@
   padding-right: 20px;
 }
 
-.add_icon, .edit_icon , .delete_icon{
+.add_icon, .edit_icon , .delete_icon, .complete_icon{
   width: 37px;
   height: 37px;
   border-radius: 10px;

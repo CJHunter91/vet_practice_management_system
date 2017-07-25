@@ -4,8 +4,7 @@ require_relative('./appointment_time')
 
 
 class Appointment
-  attr_reader :id, :appointment_time_id, :duration, :needs_seen, :reason, :pet_id
-  attr_accessor :arrival
+  attr_reader :id, :appointment_time_id, :duration, :needs_seen, :reason, :pet_id, :arrival
   def initialize(details)
     @id = details['id'].to_i if details['id']
     @appointment_time_id = details['appointment_time_id'].to_i
@@ -19,6 +18,11 @@ class Appointment
     else
       @needs_seen = true
     end
+  end
+
+  def complete
+    @needs_seen = false
+    update()
   end
 
   def set_arrival

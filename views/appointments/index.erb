@@ -1,5 +1,6 @@
 <div class="table_buttons">
   <div class="main_table_div">
+    
     <table class="embedded_table main_table"">
       <tr class="t_header">
         <th>Time</th>
@@ -45,8 +46,13 @@
       </table>
       <form method="GET" action="/appointments">
         <input type="hidden" name="next_date" value="<%= @current_date %>">
-        <input type="submit" name="next">
+        <input type="submit" name="next" value="Next">
       </form>
+      <form method="GET" action="/appointments">
+        <input type="hidden" name="prev_date" value="<%= @current_date %>">
+        <input type="submit" name="next" value="Prev">
+      </form>
+
     </div>
     <div id="add_app">
       <form method="GET" action="/owners">

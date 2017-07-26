@@ -13,9 +13,9 @@ get '/appointments' do
     @appointment.complete  
   end
 
-  
 
-  @appointments = Appointment.get_all
+
+  @appointments = Appointment.get_todays
   erb(:'appointments/index')
 end 
 

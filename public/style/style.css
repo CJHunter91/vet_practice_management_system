@@ -22,7 +22,6 @@ body{
 .owner_details{
   display: flex;
   flex-direction: row;
-  min-width: 200px;
   justify-content: center;
   height:100px;
   line-height: 150%;

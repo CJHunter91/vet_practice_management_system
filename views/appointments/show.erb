@@ -12,7 +12,7 @@
   </div>
 
   <div class="main_table_div">
-  <h3 id="table_title">Appointment Details</h3>
+    <h3 id="table_title">Appointment Details</h3>
     <table class="main_table">
       <tr class="t_header">
         <th>Time</th>
@@ -33,23 +33,24 @@
       </tr>
     </table>
   </div>
-  <div id="add_app">
-    <a href="/appointments/<%= @appointment.id %>/edit"><button class="edit_icon"></button></a>
-  </div>
+  <div id="buttons">
+    <div id="add_app">
+      <a href="/appointments/<%= @appointment.id %>/edit"><button class="edit_icon"></button></a>
+    </div>
 
-  <div id="add_app">
-    <form method="GET" action="/appointments">
-    <input type="hidden" name="complete_appointment" value="<%= @appointment.id %>">
-    <input class="complete_icon" type="submit" name="complete_submit" value="">  
-    </form>
-  </div>
+    <div id="add_app">
+      <form method="GET" action="/appointments">
+        <input type="hidden" name="complete_appointment" value="<%= @appointment.id %>">
+        <input class="complete_icon" type="submit" name="complete_submit" value="">  
+      </form>
+    </div>
 
-  <div id="add_app">
-  <form method="POST" action="/appointments/delete">
-    <input type="hidden" name="id" value="<%= @appointment.id %>">
-    <input class="delete_icon" type="submit" name="delete_appointment" value="">
-  </form>
-    
+    <div id="add_app">
+      <form method="POST" action="/appointments/delete">
+        <input type="hidden" name="id" value="<%= @appointment.id %>">
+        <input class="delete_icon" type="submit" name="delete_appointment" value="">
+      </form>
+    </div>
   </div>
 </div>
 <div id="notes_reason">

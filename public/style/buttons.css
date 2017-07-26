@@ -1,10 +1,15 @@
+#buttons{
+  display: flex;
+  flex-direction: column;
+}
+
 #add_app {
   display: flex;
   /*would like to change to column*/
   flex-direction: row;
   justify-content: flex-end;
   width: 30px;
-  padding-right: 20px;
+  padding: 10px 20px 10px 0px;
 }
 
 .add_icon, .edit_icon , .delete_icon, .complete_icon{
@@ -33,8 +38,15 @@
 
 #next{
   display: flex;
+
+  align-items: center;
+  padding-right: 10px;
+  /*margin-left: -80px; */
 }
 #prev{
   display: flex;
-  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+  /*margin-right: -80px; */
+
 }

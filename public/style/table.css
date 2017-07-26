@@ -7,8 +7,8 @@
 .main_table_div{
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  width: 70%;
 }
 
 .main_table{
@@ -18,12 +18,16 @@
 
 }
 
-.main_table td, th, a{
+  .main_table td, th, a{
     text-align: center;
     vertical-align: middle;
-    width: 100em;
-    min-height: 10em;
+    width: 10em;
+    white-space: nowrap;
     padding: 6px;
+
+}
+.main_table th{
+    padding: 10px;
 
 }
 

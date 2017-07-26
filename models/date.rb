@@ -14,14 +14,29 @@ class ApDate
     @week_of_year = params['week_of_year'].to_i
   end
 
-
-  def self.get_todays_apps
+  def self.get_todays_date
     today = Time.now
     today = today.strftime("%F")
-    values = [today]
+    return today
+  end
+
+  def self.next_day(date)
+    return Date.parse(date) + 1
+  end
+
+  def self.prev_day(date)
+    return Date.parse(date) - 1
+  end
+
+
+  def self.get_date_apps(date = self.get_todays_date)
+    values = [date]
     sql = "SELECT * FROM appointments
       WHERE app_date = $1;"
     appointments = SqlRunner.run(sql, values)
+    if appointments[0].size == 0
+      return false
+    end
     return appointments.map{|app| Appointment.new(app)}
   end
 end

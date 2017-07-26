@@ -43,6 +43,10 @@
         </tr>
         <% end %>
       </table>
+      <form method="GET" action="/appointments">
+        <input type="hidden" name="next_date" value="<%= @current_date %>">
+        <input type="submit" name="next">
+      </form>
     </div>
     <div id="add_app">
       <form method="GET" action="/owners">

@@ -11,13 +11,20 @@ get '/appointments' do
   #check complete button submitted  
   elsif params['complete_appointment']
     @appointment = Appointment.find(params['complete_appointment'])
-  #store current day
     @appointment.complete  
   end
 
-
-
-  @appointments = ApDate.get_todays_apps
+  #check param[date] is set then get next  or prev appointments
+  if params['next_date']
+    @current_date = ApDate.next_day(params['next_date'])
+    @appointments = ApDate.get_date_apps(@current_date)
+  elsif params['prev_date']
+    @current_date = ApDate.prev_day(params['prev_date'])
+    @appointments = ApDate.get_date_apps(@current_date)    
+  else
+    @current_date = ApDate.get_todays_date
+    @appointments = ApDate.get_date_apps
+  end
   erb(:'appointments/index')
 end 
 

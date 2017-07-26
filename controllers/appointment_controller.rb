@@ -25,6 +25,12 @@ get '/appointments' do
     @current_date = ApDate.get_todays_date
     @appointments = ApDate.get_date_apps
   end
+
+  if @current_date.to_s == ApDate.get_todays_date.to_s
+    @date_title = "Todays Appointments"
+  else
+    @date_title = "Appointments on " + @current_date.to_s
+  end
   erb(:'appointments/index')
 end 
 

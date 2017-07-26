@@ -51,6 +51,7 @@ CREATE TABLE appointments(
   needs_seen BOOLEAN,
   reason TEXT,
   arrival TIME,
+  app_date DATE REFERENCES calendar (id),
   pet_id INT4 REFERENCES pets (id) ON DELETE CASCADE
 );
 

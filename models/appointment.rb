@@ -4,13 +4,14 @@ require_relative('./appointment_time')
 
 
 class Appointment
-  attr_reader :id, :appointment_time_id, :duration, :needs_seen, :reason, :pet_id, :arrival
+  attr_reader :id, :appointment_time_id, :duration, :needs_seen, :reason, :pet_id, :arrival, :app_date
   def initialize(details)
     @id = details['id'].to_i if details['id']
     @appointment_time_id = details['appointment_time_id'].to_i
     @duration = 30
     @reason = details['reason']
     @pet_id = details['pet_id'].to_i
+    @app_date = details['app_date']
     @arrival = details['arrival'] ? details['arrival'] : nil
     #conversion of string into bool from db
     if details['needs_seen'] == 'f'
@@ -49,21 +50,21 @@ class Appointment
   end
 
   def save
-    values = [@appointment_time_id, @duration, @needs_seen, @reason, @arrival, @pet_id]
+    values = [@appointment_time_id, @duration, @needs_seen, @reason, @arrival, @pet_id, @app_date]
     sql = "INSERT INTO appointments
-    (appointment_time_id, duration, needs_seen, reason, arrival, pet_id)
+    (appointment_time_id, duration, needs_seen, reason, arrival, pet_id, app_date)
     VALUES 
-    ($1, $2, $3, $4, $5, $6)
+    ($1, $2, $3, $4, $5, $6, $7)
     RETURNING id;"
     @id = SqlRunner.run(sql, values)[0]['id'].to_i
   end
 
   def update
-    values = [@id, @appointment_time_id, @duration, @needs_seen, @reason, @arrival, @pet_id]
+    values = [@id, @appointment_time_id, @duration, @needs_seen, @reason, @arrival, @pet_id, @app_date]
     sql = "UPDATE appointments SET
-    (appointment_time_id, duration, needs_seen, reason, arrival, pet_id)
+    (appointment_time_id, duration, needs_seen, reason, arrival, pet_id, app_date)
     =
-    ($2, $3, $4, $5, $6, $7) 
+    ($2, $3, $4, $5, $6, $7, $8) 
     WHERE id = $1;"
     SqlRunner.run(sql, values)
   end

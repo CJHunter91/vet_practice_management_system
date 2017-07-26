@@ -30,3 +30,11 @@
 .complete_icon{
   background: url(../images/png/checkmark.png);
 }
+
+#next{
+  display: flex;
+}
+#prev{
+  display: flex;
+  justify-content: center;
+}

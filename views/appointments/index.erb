@@ -1,6 +1,12 @@
 <div class="table_buttons">
+  <div id="prev">
+    <form method="GET" action="/appointments">
+      <input type="hidden" name="prev_date" value="<%= @current_date %>">
+      <input type="submit" name="next" value="Prev">
+    </div>
+  </form>
   <div class="main_table_div">
-  <h3 id="table_title"><%= @date_title %></h3>
+    <h3 id="table_title"><%= @date_title %></h3>
     <table class="embedded_table main_table"">
       <tr class="t_header">
         <th>Time</th>
@@ -29,16 +35,16 @@
               <td><%= pet.breed %></td>
               <td><%= appointment.reason %></td>
               <td>
-              <% if !appointment.needs_seen %>
-              Complete
-              <% elsif appointment.arrival %>
+                <% if !appointment.needs_seen %>
+                Complete
+                <% elsif appointment.arrival %>
                 <%= appointment.arrival %>
-              <% else %>
-              <form method="GET" action="/appointments">
-                <input type="hidden" name="appointment" value="<%= appointment.id %>">
-                <input type="submit" name="submit" value="Arrived">
-              </form>
-              <% end %>
+                <% else %>
+                <form method="GET" action="/appointments">
+                  <input type="hidden" name="appointment" value="<%= appointment.id %>">
+                  <input type="submit" name="submit" value="Arrived">
+                </form>
+                <% end %>
               </td>
             </table>
           </a>
@@ -48,15 +54,12 @@
         <td colspan="7">No Appoinments Scheduled</td>
         <% end %>
       </table>
+    </div>
+    <div id="next">
       <form method="GET" action="/appointments">
         <input type="hidden" name="next_date" value="<%= @current_date %>">
         <input type="submit" name="next" value="Next">
       </form>
-      <form method="GET" action="/appointments">
-        <input type="hidden" name="prev_date" value="<%= @current_date %>">
-        <input type="submit" name="next" value="Prev">
-      </form>
-
     </div>
     <div id="add_app">
       <form method="GET" action="/owners">

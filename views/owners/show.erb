@@ -61,20 +61,21 @@
         <% end %>
       </table>
     </div>
-    <div id="add_app">
-      <a href="/pet/<%= @owner.id %>/new"><button class="add_icon"></button></a>
+    <div id="buttons">
+      <div id="add_app">
+        <a href="/pet/<%= @owner.id %>/new"><button class="add_icon"></button></a>
 
-    </div>
-    <div id="add_app">
-      <a href="/owners/<%= @owner.id %>/edit"><button class="edit_icon"></button></a>
+      </div>
+      <div id="add_app">
+        <a href="/owners/<%= @owner.id %>/edit"><button class="edit_icon"></button></a>
 
-    </div>
+      </div>
 
-    <div id="add_app">
-      <form method="POST" action="/owners/delete">
-        <input type="hidden" name="id" value="<%= @owner.id %>">
-        <input class="delete_icon" type="submit" name="delete_owner" value="">
-      </form>
-
-    </div>
+      <div id="add_app">
+        <form method="POST" action="/owners/delete">
+          <input type="hidden" name="id" value="<%= @owner.id %>">
+          <input class="delete_icon" type="submit" name="delete_owner" value="">
+        </form>
+      </div>
+    </div>    
   </div>

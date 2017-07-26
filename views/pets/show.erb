@@ -1,17 +1,17 @@
 <div class="table_buttons">
   <div class="owner_details">
-  
+
     <address>
-    <a href="/owners/<%= @owner.id %>">
-      <p>
-        <%= @owner.first_name %><br>
-        <%= @owner.last_name %><br>
-        <%= @owner.address %><br>
-        <%= @owner.postcode %>
-        <%= @owner.phone %>
-        <span class="description">Return to owner</span>
-      </p>
-    </a>
+      <a href="/owners/<%= @owner.id %>">
+        <p>
+          <%= @owner.first_name %><br>
+          <%= @owner.last_name %><br>
+          <%= @owner.address %><br>
+          <%= @owner.postcode %><br>
+          <%= @owner.phone %><br>
+          <span class="description">Return to owner</span>
+        </p>
+      </a>
     </address>
     
   </div>
@@ -35,16 +35,19 @@
       </tr>
     </table>
   </div>
-  <div id="add_app">
-    <a href="/pet/<%= @pet.id %>/edit"><button class="edit_icon"></button></a>
-  </div>
+  <div id="buttons">
+    <div id="add_app">
+      <a href="/pet/<%= @pet.id %>/edit"><button class="edit_icon"></button></a>
+    </div>
 
-  <div id="add_app">
-  <form method="POST" action="/pet/delete">
-    <input type="hidden" name="id" value="<%= @pet.id %>">
-    <input class="delete_icon" type="submit" name="delete_pet" value="">
-  </form>
+    <div id="add_app">
+      <form method="POST" action="/pet/delete">
+        <input type="hidden" name="id" value="<%= @pet.id %>">
+        <input class="delete_icon" type="submit" name="delete_pet" value="">
+      </form>
+    </div>
+  </div>
 </div>
 <div id="med_history_div">
-  
+
 </div>

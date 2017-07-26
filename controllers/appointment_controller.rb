@@ -3,19 +3,17 @@ require_relative('../models/appointment_time')
 
 # index
 get '/appointments' do
-  #check that arrived button clicked then timestamp
+  #check if arrived button clicked then timestamp
   if params['submit'] == "Arrived"
     @appointment = Appointment.find(params['appointment'])
     @appointment.set_arrival
-
   #check complete button submitted  
   elsif params['complete_appointment']
     @appointment = Appointment.find(params['complete_appointment'])
     @appointment.complete  
   end
 
-  #check complete button submitted
-
+  
 
   @appointments = Appointment.get_all
   erb(:'appointments/index')

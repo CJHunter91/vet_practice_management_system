@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('./appointment')
 
 class date 
 
@@ -13,11 +14,4 @@ class date
     @week_of_year = params['week_of_year'].to_i
   end
 
-  def get_day_appointments
-
-  end
-
-  def get_date
-
-  end
 end

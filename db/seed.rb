@@ -4,8 +4,8 @@ require_relative('../models/owner')
 require_relative('../models/pet')
 require_relative('../models/appointment_time')
 
-time = Time.now
-time = time.strftime("%F")
+today = Time.now
+today = today.strftime("%F")
 
 
 Appointment.delete_all
@@ -113,28 +113,28 @@ appointment1 = Appointment.new({
   'appointment_time_id' => time1.id, 
   'needs_seen' => true, 
   'pet_id' => pet1.id, 
-  'app_date' => time, 
+  'app_date' => today, 
   'reason' => "Needs vacinated."
   })
 appointment2 = Appointment.new({
   'appointment_time_id' => time2.id, 
   'needs_seen' => true, 
   'pet_id' => pet2.id,
-  'app_date' => time,
+  'app_date' => today,
   'reason' => "Lump on abdomen." 
   })
 appointment3 = Appointment.new({
   'appointment_time_id' => time3.id, 
   'needs_seen' => true, 
   'pet_id' => pet3.id,
-  'app_date' => time,
+  'app_date' => today,
   'reason' => 'Regular checkup.' 
   })
 appointment4 = Appointment.new({
   'appointment_time_id' => time4.id, 
   'needs_seen' => true, 
   'pet_id' => pet4.id,
-  'app_date' => time,
+  'app_date' => today,
   'reason' => "Difficulty breathing." 
   })
 

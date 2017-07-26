@@ -21,6 +21,11 @@ class Appointment
     end
   end
 
+  def get_todays
+    today = Time.now
+    today = today.strftime("%F")
+  end
+
   def complete
     @needs_seen = false
     update()

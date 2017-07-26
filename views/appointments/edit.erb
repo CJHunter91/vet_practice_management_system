@@ -20,16 +20,16 @@ end
 
 <form method="POST" action="/appointments/edit">
   <label>Date:</label>
-  <input type="date" name="app_date">
+  <input type="date" name="app_date" required>
   <label>Time:</label>
-  <select name="appointment_time_id">
+  <select name="appointment_time_id" required>
     <option value="<%= @current_time.id %>"><%= @current_time.available_time %></option>
     <% @times.each do |time| %>
     <option value="<%= time.id %>"><%= time.available_time %></option>
     <% end %>
   </select>
   <label>Reason</label>
-  <input type="text" name="reason" value="<%= @appointment.reason %>">
+  <input type="text" name="reason" value="<%= @appointment.reason %>" required>
 
   <input type="hidden" name="id" value="<%= @appointment.id %>">
   <input type="hidden" name="pet_id" value="<%= pet_id %>">

@@ -21,11 +21,6 @@ class Appointment
     end
   end
 
-  def get_todays
-    today = Time.now
-    today = today.strftime("%F")
-  end
-
   def complete
     @needs_seen = false
     update()
@@ -78,6 +73,16 @@ class Appointment
     values = [@id]
     sql = "DELETE FROM appointments WHERE id = $1;"
     SqlRunner.run(sql, values)
+  end
+
+  def self.get_todays
+    today = Time.now
+    today = today.strftime("%F")
+    values = [today]
+    sql = "SELECT * FROM appointments
+      WHERE app_date = $1;"
+    appointments = SqlRunner.run(sql, values)
+    return appointments.map{|app| Appointment.new(app)}
   end
 
   def self.find(id)

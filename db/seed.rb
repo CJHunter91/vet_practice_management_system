@@ -5,6 +5,8 @@ require_relative('../models/pet')
 require_relative('../models/appointment_time')
 
 today = Time.now
+tomorrow = today + 86400
+tomorrow = tomorrow.strftime("%F")
 today = today.strftime("%F")
 
 
@@ -138,10 +140,19 @@ appointment4 = Appointment.new({
   'reason' => "Difficulty breathing." 
   })
 
+appointment5 = Appointment.new({
+  'appointment_time_id' => time7.id, 
+  'needs_seen' => true, 
+  'pet_id' => pet4.id,
+  'app_date' => tomorrow,
+  'reason' => "Difficulty breathing." 
+  })
+
 appointment1.save
 appointment2.save
 appointment3.save
 appointment4.save
+appointment5.save
 
 binding.pry
 nil

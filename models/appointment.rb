@@ -75,16 +75,6 @@ class Appointment
     SqlRunner.run(sql, values)
   end
 
-  def self.get_todays
-    today = Time.now
-    today = today.strftime("%F")
-    values = [today]
-    sql = "SELECT * FROM appointments
-      WHERE app_date = $1;"
-    appointments = SqlRunner.run(sql, values)
-    return appointments.map{|app| Appointment.new(app)}
-  end
-
   def self.find(id)
     values = [id]
     sql = "SELECT * FROM appointments

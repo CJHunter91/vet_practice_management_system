@@ -1,7 +1,7 @@
 require_relative('../db/sql_runner')
 require_relative('./appointment')
 
-class date 
+class ApDate 
 
   def initialize(params)
     @id = params['id']
@@ -14,4 +14,14 @@ class date
     @week_of_year = params['week_of_year'].to_i
   end
 
+
+  def self.get_todays_apps
+    today = Time.now
+    today = today.strftime("%F")
+    values = [today]
+    sql = "SELECT * FROM appointments
+      WHERE app_date = $1;"
+    appointments = SqlRunner.run(sql, values)
+    return appointments.map{|app| Appointment.new(app)}
+  end
 end

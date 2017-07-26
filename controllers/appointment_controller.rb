@@ -1,5 +1,6 @@
 require_relative('../models/appointment')
 require_relative('../models/appointment_time')
+require_relative('../models/date')
 
 # index
 get '/appointments' do
@@ -10,12 +11,13 @@ get '/appointments' do
   #check complete button submitted  
   elsif params['complete_appointment']
     @appointment = Appointment.find(params['complete_appointment'])
+  #store current day
     @appointment.complete  
   end
 
 
 
-  @appointments = Appointment.get_todays
+  @appointments = ApDate.get_todays_apps
   erb(:'appointments/index')
 end 
 

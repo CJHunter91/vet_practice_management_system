@@ -34,9 +34,11 @@ class ApDate
     sql = "SELECT * FROM appointments
       WHERE app_date = $1;"
     appointments = SqlRunner.run(sql, values)
-    if appointments[0].size == 0
-      return false
+
+    if appointments.to_a[0]
+      return appointments.map{|app| Appointment.new(app)}
     end
-    return appointments.map{|app| Appointment.new(app)}
+    return false
   end
+  
 end

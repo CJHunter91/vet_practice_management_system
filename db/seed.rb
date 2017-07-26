@@ -3,6 +3,7 @@ require_relative('../models/appointment')
 require_relative('../models/owner')
 require_relative('../models/pet')
 require_relative('../models/appointment_time')
+require_relative('../models/date')
 
 today = Time.now
 tomorrow = today + 86400

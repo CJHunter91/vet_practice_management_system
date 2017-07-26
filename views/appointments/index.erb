@@ -12,6 +12,7 @@
         <th>Arrival</th>
         <!-- surname, address, name, species, breed sex(ME MN FE FN U) dob potentialy reason for appointment-->
       </tr>
+      <% if @appointments %>
       <% @appointments.each do |appointment| %>
       <% time = appointment.get_time %>
       <% pet = appointment.get_pet %>
@@ -42,6 +43,9 @@
             </table>
           </a>
         </tr>
+        <% end %>
+        <% else %>
+        <td colspan="7">No Appoinments Scheduled</td>
         <% end %>
       </table>
       <form method="GET" action="/appointments">

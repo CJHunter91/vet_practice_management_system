@@ -7,7 +7,7 @@
   </form>
   <div class="main_table_div">
     <h3 id="table_title"><%= @date_title %></h3>
-    <table class="embedded_table main_table"">
+    <table class="main_table"">
       <tr class="t_header">
         <th>Time</th>
         <th>Surname</th>
@@ -26,7 +26,7 @@
       <tr class="main_data">
         <td colspan="7">
           <a href="/appointments/<%= appointment.id %>">
-            <table >
+            <table class="embedded_table">
               <td><%= time.available_time %></td>
               <td><%= owner.last_name %></td>
               <td><%= pet.name %></td>

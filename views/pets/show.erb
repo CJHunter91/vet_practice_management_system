@@ -1,14 +1,19 @@
 <div class="table_buttons">
   <div class="owner_details">
+  
     <address>
+    <a href="/owners/<%= @owner.id %>">
       <p>
         <%= @owner.first_name %><br>
         <%= @owner.last_name %><br>
         <%= @owner.address %><br>
         <%= @owner.postcode %>
         <%= @owner.phone %>
+        <span class="description">Return to owner</span>
       </p>
+    </a>
     </address>
+    
   </div>
 
   <div class="main_table_div">

@@ -16,9 +16,7 @@ class Pet
 
   def save
       @age = format_date(@age)
-      p @age, "**************"
       values = [@name, @age, @type, @breed, @sex, @owner_id]
-      
       sql = "INSERT INTO pets
       (name, age, type, breed, sex, owner_id)
       VALUES
@@ -37,7 +35,6 @@ class Pet
 
   def update
     @age = format_date(@age)
-    p @age, "**************"
     
     values = [@name, @age, @type, @breed, @sex, @owner_id, @id]
     

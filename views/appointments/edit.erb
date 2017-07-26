@@ -19,6 +19,8 @@ end
 </form>
 
 <form method="POST" action="/appointments/edit">
+  <label>Date:</label>
+  <input type="date" name="app_date">
   <label>Time:</label>
   <select name="appointment_time_id">
     <option value="<%= @current_time.id %>"><%= @current_time.available_time %></option>

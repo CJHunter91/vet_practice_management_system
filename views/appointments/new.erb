@@ -6,6 +6,8 @@
 <% end %>
 <form method="POST" action="/appointments">
   <input type="hidden" name="pet_id" value="<%= params[:pet_id] %>">
+  <label>Date:</label>
+  <input type="date" name="app_date">
   <label>Time:</label>
   <select name="appointment_time_id" required>
     <% @times.each do |time| %>

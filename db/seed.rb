@@ -1,4 +1,3 @@
-require('pry')
 require_relative('../models/appointment')
 require_relative('../models/owner')
 require_relative('../models/pet')
@@ -154,6 +153,3 @@ appointment2.save
 appointment3.save
 appointment4.save
 appointment5.save
-
-binding.pry
-nil

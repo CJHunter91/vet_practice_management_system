@@ -1,6 +1,5 @@
 require_relative('../db/sql_runner')
 require_relative('./owner')
-require('pry')
 
 class Pet
   attr_reader :id, :name, :age, :type, :breed, :sex, :owner_id
